@@ -1,0 +1,64 @@
+.blogPage {
+    background: #ffffff;
+    padding: 60px 20px;
+}
+
+.blogWrap {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+/* Title */
+.blogTitle {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+/* Meta */
+.blogMeta {
+    color: rgba(17, 24, 39, 0.55);
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.divider {
+    margin: 28px 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/* Content */
+.blogContent p {
+    font-size: 18px;
+    line-height: 1.85;
+    color: rgba(17, 24, 39, 0.85);
+    margin-bottom: 20px;
+}
+
+/* Dialogue */
+blockquote {
+    border-left: 4px solid #2563eb;
+    padding-left: 18px;
+    margin: 24px 0;
+    color: rgba(17, 24, 39, 0.9);
+}
+
+/* Section headings */
+.blogContent h2 {
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Lists */
+.blogContent ul {
+    padding-left: 22px;
+    margin-bottom: 20px;
+}
+
+.blogContent li {
+    margin-bottom: 8px;
+}

@@ -1,0 +1,64 @@
+/* Base share button */
+.shareBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    font-weight: 500;
+    color: #111827;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.shareBtn svg {
+    font-size: 18px;
+}
+
+/* Hover lift */
+.shareBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* BRAND COLORS */
+
+/* Facebook */
+.shareBtn--facebook svg {
+    color: #1877f2;
+}
+
+/* X (Twitter) */
+.shareBtn--x svg {
+    color: #000000;
+}
+
+/* Instagram (gradient look, clean) */
+.shareBtn--instagram svg {
+    color: #e1306c;
+}
+
+/* TikTok */
+.shareBtn--tiktok svg {
+    color: #000000;
+}
+
+/* Copy link */
+.shareBtn--copy svg {
+    color: #2563eb;
+}
+
+/* Optional: subtle tinted hover backgrounds */
+.shareBtn--facebook:hover {
+    background: rgba(24, 119, 242, 0.06);
+}
+
+.shareBtn--instagram:hover {
+    background: rgba(225, 48, 108, 0.06);
+}
+
+.shareBtn--copy:hover {
+    background: rgba(37, 99, 235, 0.06);
+}

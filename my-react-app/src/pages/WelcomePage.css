@@ -1,0 +1,365 @@
+:root {
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --border: rgba(15, 23, 42, 0.08);
+    --shadow: 0 18px 50px rgba(15, 23, 42, 0.10);
+    --shadow-soft: 0 10px 28px rgba(15, 23, 42, 0.08);
+    --radius: 22px;
+    --accent: #2f6fed;
+    /* blue */
+    --accent2: #22c55e;
+    /* green */
+    --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Inter, "Helvetica Neue",
+        Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    --serif: ui-serif, "Iowan Old Style", "Palatino", "Georgia", serif;
+}
+
+/* Page */
+.welcomePage {
+    font-family: var(--font);
+    min-height: 100vh;
+    color: var(--text);
+    background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(47, 111, 237, 0.10), transparent 55%),
+        radial-gradient(900px 500px at 90% 10%, rgba(34, 197, 94, 0.08), transparent 60%),
+        var(--bg);
+}
+
+/* Top bar */
+.pageTopbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+}
+
+.pageTopbarInner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 14px 18px;
+    display: grid;
+    grid-template-columns: 120px 1fr 120px;
+    align-items: center;
+}
+
+.brand {
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: rgba(15, 23, 42, 0.85);
+}
+
+.backLink {
+    text-decoration: none;
+    color: rgba(15, 23, 42, 0.92);
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.90);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.backLink:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.10);
+    background: #fff;
+}
+
+/* Container */
+.welcomeContainer {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 34px 18px 70px;
+}
+
+.welcomeTitle {
+    font-size: clamp(32px, 3.2vw, 40px);
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        margin: 6px 0 10px;
+        color: var(--ink);
+        font-weight: 700;
+}
+
+/* Lead line under title */
+.welcomeLead {
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(15, 23, 42, 0.72);
+    max-width: 720px;
+    margin: 6px 0 26px;
+    letter-spacing: 0.01em;
+    font-weight: 450;
+}
+
+.welcomeLead::before {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    margin-bottom: 14px;
+    border-radius: 2px;
+}
+
+/* Main card */
+.welcomeHero {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.96));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 26px;
+    box-shadow: var(--shadow);
+    align-items: start;
+}
+
+/* Photo */
+.welcomePhotoWrap {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+    height: fit-content;
+    align-self: start;
+}
+
+.welcomePhoto {
+    width: 100%;
+    display: block;
+    aspect-ratio: 4 / 4.4;
+    /* slightly shorter */
+    object-fit: cover;
+    object-position: 50% 30%;
+    /* move focus upward to face */
+}
+
+/* Text */
+.welcomeText {
+    max-width: 640px;
+    font-size: 17px;
+    line-height: 1.85;
+    letter-spacing: 0.01em;
+    color: rgba(15, 23, 42, 0.90);
+}
+
+.welcomeText p {
+    margin: 0 0 18px;
+    color: rgba(30, 41, 59, 0.92);
+}
+
+.welcomeText p:last-child {
+    margin-bottom: 0;
+}
+
+/* Divider at end of column */
+.welcomeText::after {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-top: 18px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(15, 23, 42, 0.12),
+            transparent);
+}
+
+/* Guarantee box */
+.guaranteeBox {
+    margin: 14px 0 18px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: rgba(248, 250, 252, 0.90);
+    border: 1px solid rgba(15, 23, 42, 0.10);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.guaranteeIcon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 999px;
+    background: var(--accent2);
+    box-shadow: 0 10px 18px rgba(34, 197, 94, 0.20);
+    color: #fff;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.guaranteeText h3 {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    font-weight: 750;
+    letter-spacing: 0.2px;
+    color: rgba(15, 23, 42, 0.95);
+}
+
+.guaranteeText p {
+    margin: 0;
+    color: rgba(51, 65, 85, 0.95);
+}
+
+/* Desktop sticky photo */
+@media (min-width: 981px) {
+    .welcomePhotoWrap {
+        position: sticky;
+        top: 96px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 980px) {
+    .welcomeHero {
+        grid-template-columns: 1fr;
+    }
+
+    .welcomeTitle {
+        font-size: 36px;
+    }
+
+    .welcomeText {
+        font-size: 16px;
+    }
+}
+
+.welcomeText {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* consistent vertical spacing */
+}
+
+.welcomeText p {
+    margin: 0;
+    /* let gap control spacing */
+}
+
+.guaranteeBox {
+    margin: 6px 0 0;
+    /* or 0 if you want it tight */
+}
+/* ===== DROP-IN REPLACEMENT (paste at the bottom of WelcomePage.css) ===== */
+
+/* Control vertical spacing from the container (premium, consistent rhythm) */
+.welcomeText {
+    max-width: 640px;
+    font-size: 17px;
+    line-height: 1.85;
+    letter-spacing: 0.01em;
+    color: rgba(15, 23, 42, 0.90);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* <-- adjust 14–18px if you want */
+}
+
+/* Remove paragraph margins so spacing is not random */
+.welcomeText p {
+    margin: 0 !important;
+    color: rgba(30, 41, 59, 0.92);
+}
+
+/* Guarantee box: let the gap handle spacing */
+.guaranteeBox {
+    margin: 0 !important;
+    /* was 14px 0 18px */
+    padding: 12px 14px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+}
+
+/* Optional: divider often makes the column feel "cut off" */
+.welcomeText::after {
+    display: none !important;
+}
+
+/* Optional: if photo feels too tall compared to text */
+.welcomePhoto {
+    aspect-ratio: 4 / 4.6 !important;
+    /* was 4/5 */
+}
+
+/* Optional: slightly reduce photo column width to reduce mismatch */
+@media (min-width: 981px) {
+    .welcomeHero {
+        grid-template-columns: 380px 1fr !important;
+        /* was 420px 1fr */
+    }
+}
+.welcomeText {
+    gap: 14px;
+}
+
+/* from 16px */
+
+@media (min-width: 981px) {
+    .welcomeHero {
+        grid-template-columns: 380px 1fr;
+    }
+}
+
+.welcomeText {
+    line-height: 1.8;
+}
+
+/* from 1.85 */
+/* ===== Trust Row (professional reassurance badges) ===== */
+
+.trustRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 22px;
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+.trustItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    color: rgba(71, 85, 105, 0.9);
+    letter-spacing: 0.01em;
+}
+
+/* softer dot */
+.trustDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    opacity: 0.8;
+    box-shadow: none;
+}
+
+.pageTopbarInner {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 14px 18px;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+}
+
+.topbarRightPlaceholder {
+    width: 90px;
+}
+
+.pageTopbar .brand {
+    text-align: center;
+}

@@ -1,0 +1,416 @@
+/* =========================
+   ServicesPage.css (CLEAN)
+   Single source of truth — no duplicates
+========================= */
+:root {
+    --ink: #0b1220;
+    /* headings */
+    --text: rgba(11, 18, 32, .82);
+    --muted: rgba(11, 18, 32, .60);
+    --border: rgba(11, 18, 32, .10);
+    --surface: rgba(255, 255, 255, .68);
+    --surface-strong: rgba(255, 255, 255, .78);
+    --accent: #2563eb;
+}
+
+.servicesIntro {
+    /* was too large */
+    white-space: nowrap;
+    margin: 6px 0 14px;
+        max-width: 60ch;
+    
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 500;
+    
+        color: #0b1220;
+        letter-spacing: -0.01em;
+    /* add here */
+}
+.chip {
+font-size: 13px;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    margin-top: 8px;
+    box-shadow: none;
+    background: rgba(37, 99, 235, 0.07);
+    border: 1px solid rgba(37, 99, 235, 0.14);
+    color: black
+}
+
+.servicesChips {
+    display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+}
+/* Page */
+.servicesPage {
+    min-height: 100vh;
+    font-family: var(--font, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+            sans-serif);
+    color: var(--text);
+
+    /* consistent base type */
+    font-size: 16px;
+    line-height: 1.75;
+
+    background:
+        radial-gradient(1100px 520px at 20% 0%, rgba(99, 102, 241, 0.08), transparent 60%),
+        radial-gradient(900px 460px at 85% 10%, rgba(56, 189, 248, 0.08), transparent 55%),
+        #f6f7fb;
+}
+
+/* Topbar */
+.pageTopbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.pageTopbarInner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: rgba(15, 23, 42, 0.85);
+}
+
+.spacer {
+    width: 64px;
+}
+
+/* Back button — SAME “pill button” style + hover lift (no underline) */
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 650;
+
+    color: #2563eb;
+    text-decoration: none;
+
+    padding: 9px 14px;
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(15, 23, 42, 0.10);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.backLink:hover {
+transform: translateY(-1px);
+    text-decoration: none;
+
+    background: rgba(37, 99, 235, 0.10);
+    /* blue tint pill */
+    border-color: rgba(37, 99, 235, 0.22);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.10);
+
+    backdrop-filter: none;
+    /* optional: removes glass blur */
+}
+
+.backLink:active {
+    transform: translateY(0px);
+}
+
+.backLink:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18), 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+/* Layout */
+.servicesContainer {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 44px 20px 92px;
+        /* or 1200 */
+}
+
+.servicesHero {
+        margin-bottom: 0;
+        max-width: 1120px;
+            margin: 0 auto 6px;
+            padding-top: 28px;
+            padding-bottom: 18px;
+}
+
+/* Typography (consistent system) */
+.servicesTitle {
+    font-size: clamp(32px, 3.2vw, 40px);
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        margin: 6px 0 10px;
+        color: var(--ink);
+        font-weight: 700;
+}
+
+
+/* Split layout */
+.servicesSplit {
+    display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 22px;
+        align-items: start;
+        max-width: 1120px;
+        margin: 0 auto;
+        margin-top: 46px;
+        /* key change */
+}
+
+/* Left nav */
+.servicesNav {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(15, 23, 42, 0.10);
+    border-radius: 18px;
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+    position: sticky;
+        top: 92px;
+        /* below your topbar */
+        border-color: var(--border);
+        
+}
+
+.servicesTab {
+    width: 100%;
+    padding: 16px 16px;
+    border: 0;
+background: rgba(37, 99, 235, 0.06);
+    text-align: left;
+    cursor: pointer;
+    transition: background 160ms ease, transform 120ms ease;
+    position: relative;
+    
+}
+
+.servicesTab+.servicesTab {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.servicesTab:hover {
+    background: rgba(15, 23, 42, 0.04);
+    transform: translateX(2px);
+    
+    
+}
+
+.servicesTab.active {
+    background: rgba(37, 99, 235, 0.08);
+        border: none;
+        box-shadow: none;
+}
+.servicesTab.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.65);
+}
+
+.tabTitle {
+    font-size: 14.5px;
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+}
+
+.tabSub {
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+/* Right panel */
+.servicesPanel {
+    border: 1px solid rgba(15, 23, 42, 0.10);
+    border-radius: 18px;
+    padding: 18px 22px 18px;
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.07);
+    border-color: var(--border); 
+}
+
+.panelTitle {
+    font-size: 22px;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    margin: 0 0 10px;
+    color: var(--ink);
+}
+
+.panelLead {
+    margin: 0 0 16px;
+    font-size: 15.5px;
+    color: #0f172a;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+/* Section labels + lists */
+.servicesSectionTitle {
+    margin: 18px 0 12px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: rgba(11, 18, 32, .55);
+}
+
+.servicesGridList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: #0f172a;
+    font-weight: 500;
+    grid-template-columns: 1fr;
+    max-width: 78ch;
+    gap: 14px 34px;
+}
+
+.servicesGridList li {
+    position: relative;
+    padding-left: 18px;
+}
+
+.servicesGridList li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background:#0f172a;;
+}
+
+.servicesOneCol {
+    grid-template-columns: 1fr;
+}
+
+.servicesMiniDivider {
+    height: 1px;
+    background: rgba(15, 23, 42, 0.08);
+    margin: 22px 0;
+}
+
+/* CTA */
+.ctaRow {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.ctaBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 750;
+    color: #0f172a;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.22);
+}
+
+.ctaBtn:hover {
+    transform: translateY(-1px);
+}
+
+.ctaNote {
+    color: rgba(15, 23, 42, 0.62);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .servicesSplit {
+        grid-template-columns: 1fr;
+    }
+
+    
+}
+@media (max-width: 768px) {
+    .servicesIntro {
+        white-space: normal;
+                grid-template-columns: 1fr;
+    }
+}
+
+.servicesMeta {
+    margin-top: 10px;
+        font-weight: 600;
+        font-size: 13.5px;
+        letter-spacing: .02em;
+        color: #5f7d76;
+}
+
+/* ===== SPACING NORMALIZER (override all above) ===== */
+
+/* container */
+.servicesContainer {
+    padding-top: 26px !important;
+}
+
+/* hero block */
+.servicesHero {
+    padding: 0 !important;
+    margin: 0 0 12px !important;
+}
+
+/* title rhythm */
+.servicesTitle {
+    margin: 0 0 8px !important;
+}
+
+.servicesIntro {
+    margin: 0 0 8px !important;
+}
+
+.servicesMeta {
+    margin: 0 0 14px !important;
+}
+
+/* chips row */
+.servicesChips {
+    margin: 0 !important;
+}
+
+/* section drop */
+.servicesSplit {
+    margin-top: 28px !important;
+}

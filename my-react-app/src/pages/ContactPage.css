@@ -1,0 +1,208 @@
+.contactPageWrap {
+    min-height: 100vh;
+    background: #fff;
+}
+
+.contactTopbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid #e5e7eb;
+    backdrop-filter: blur(10px);
+    z-index: 50;
+}
+
+.contactTopbarInner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contactBrand {
+    font-weight: 700;
+}
+
+.contactBack {
+    text-decoration: none;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    padding: 8px 10px;
+    border-radius: 12px;
+}
+
+.contactBack:hover {
+    background: #f9fafb;
+}
+
+.contactMain {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 18px 60px;
+}
+
+.contactTitle {
+    font-size: 44px;
+    margin: 0 0 14px 0;
+    text-align: center;
+}
+
+.contactIntro {
+    max-width: 720px;
+    margin: 0 auto 28px auto;
+    color: #6b7280;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.contactIntro a {
+    color: #111827;
+    text-decoration: underline;
+}
+
+.contactForm {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.contactForm label {
+    display: block;
+    font-weight: 700;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.contactForm label span {
+    font-weight: 400;
+    color: #6b7280;
+}
+
+.contactForm input,
+.contactForm textarea {
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 12px;
+    font-size: 15px;
+    outline: none;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+    border-color: #2f6fec;
+    box-shadow: 0 0 0 4px rgba(47, 111, 236, 0.12);
+}
+
+.contactSubmit {
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px 14px;
+    border: 0;
+    border-radius: 14px;
+    background: #2f6fec;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.contactSubmit:hover {
+    filter: brightness(0.97);
+}
+
+
+.questionnaire {
+    max-width: 720px;
+    margin: 40px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.qTitle {
+    font-size: 24px;
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.qText {
+    text-align: center;
+    color: rgba(15, 23, 42, 0.75);
+    margin: 0 auto 18px;
+    line-height: 1.7;
+    max-width: 620px;
+}
+
+.qForm {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.qLabel {
+    display: block;
+    font-weight: 700;
+    margin: 18px 0 10px;
+    color: #111827;
+}
+
+.qOptions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 6px 0;
+}
+
+.qOption {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px;
+    background: #fff;
+}
+
+.qOption input {
+    margin-top: 3px;
+}
+
+.qTextarea {
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+    outline: none;
+}
+
+.qTextarea:focus {
+    border-color: #2f6fec;
+    box-shadow: 0 0 0 4px rgba(47, 111, 236, 0.12);
+}
+
+/* input text */
+.contactPage input,
+.contactPage textarea {
+    color: #0f172a;
+    /* same black used in headings */
+}
+
+/* placeholder hint text */
+.contactPage input::placeholder,
+.contactPage textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* label text (Name, Email etc) */
+.contactPage label {
+    color: #0f172a;
+
+}
+
+/* the (required) text */
+.contactPage span {
+    color: #0f172a;
+    opacity: 0.6;
+    /* keeps it softer but not disabled grey */
+}
