@@ -127,8 +127,6 @@ export default function HomePage() {
               <div className="quoteText">{text.quote}</div>
             </div>
 
-            <div className="divider" />
-
             <div className="glanceItem">
               <span className="icon">🧠</span>
               <div>
