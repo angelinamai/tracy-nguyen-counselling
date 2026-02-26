@@ -382,6 +382,11 @@ body {
 
 .resourceLinkCard {
   position: relative;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease;
 }
 
 .resourceLinkCard::after {
@@ -395,6 +400,24 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
+}
+
+.resourceLinkCard:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(58, 108, 255, 0.12),
+    rgba(24, 184, 255, 0.08) 52%,
+    rgba(255, 255, 255, 0.92)
+  ) !important;
+  border-color: rgba(58, 108, 255, 0.32) !important;
+}
+
+.resourceLinkCard:hover::after {
+  background: linear-gradient(
+    135deg,
+    rgba(58, 108, 255, 0.4),
+    rgba(24, 184, 255, 0.28)
+  );
 }
 
 .blogList {
