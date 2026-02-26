@@ -9,7 +9,7 @@ const POSTS_PER_PAGE = 4;
 
 export default function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
-  const { text } = useSiteLang();
+  const { text, lang } = useSiteLang();
 
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
 
@@ -24,29 +24,33 @@ export default function Blog() {
         <h1 className="blogTitle">{text.blogPage.title}</h1>
 
         <div className="blogList">
-          {selectedPosts.map((post) => (
-            <Link
-              key={post.slug}
-              to={`/blog/${post.slug}`}
-              className="blogCard"
-            >
-              {post.hero && (
-                <img
-                  src={post.hero}
-                  alt={post.title}
-                  className="blogCardImage"
-                  loading="lazy"
-                />
-              )}
+          {selectedPosts.map((post) => {
+            const localized = post[lang] || post.en;
 
-              <h2 className="blogCardTitle">{post.title}</h2>
-              <p className="blogCardMeta">
-                {post.author} · {post.date}
-              </p>
-              <p className="blogCardExcerpt">{post.excerpt}</p>
-              <span className="blogCardCta">{text.blogPage.readMore}</span>
-            </Link>
-          ))}
+            return (
+              <Link
+                key={post.slug}
+                to={`/blog/${post.slug}`}
+                className="blogCard"
+              >
+                {post.hero && (
+                  <img
+                    src={post.hero}
+                    alt={localized.title}
+                    className="blogCardImage"
+                    loading="lazy"
+                  />
+                )}
+
+                <h2 className="blogCardTitle">{localized.title}</h2>
+                <p className="blogCardMeta">
+                  {localized.author} · {localized.date}
+                </p>
+                <p className="blogCardExcerpt">{localized.excerpt}</p>
+                <span className="blogCardCta">{text.blogPage.readMore}</span>
+              </Link>
+            );
+          })}
         </div>
 
         {/* Pagination */}
