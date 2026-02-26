@@ -91,6 +91,13 @@ body {
   white-space: nowrap;
 }
 
+.topbar .brand {
+  font-family: var(--font-display) !important;
+  font-size: 1.02rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+}
+
 .nav {
   margin-left: auto !important;
   display: flex;
@@ -118,6 +125,13 @@ body {
   font-weight: 700;
   background: transparent;
   transition: 170ms ease;
+}
+
+.topbar .nav a,
+.topbar .langBtn {
+  font-family: var(--font-body) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
 }
 
 .nav a:hover,
@@ -250,6 +264,19 @@ body {
   font-family: var(--font-display) !important;
   color: var(--text) !important;
   letter-spacing: -0.015em;
+}
+
+.contactTitle,
+.resourcesTitle,
+.servicesTitle,
+.faqTitle,
+.welcomeTitle,
+.blogTitle {
+  font-family: var(--font-display) !important;
+  font-size: clamp(2.1rem, 3.2vw, 2.7rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
 }
 
 .subtitle,
