@@ -328,6 +328,24 @@ body {
   justify-content: center;
 }
 
+/* Normalize spacing rhythm inside "My Practice at a Glance" card */
+.stickyCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stickyCard .sectionTitle,
+.stickyCard .glanceItem,
+.stickyCard .quoteBox,
+.stickyCard .divider {
+  margin: 0 !important;
+}
+
+.stickyCard .glanceItem {
+  padding: 0 !important;
+}
+
 .servicesSplit {
   display: grid;
   grid-template-columns: 300px 1fr;
