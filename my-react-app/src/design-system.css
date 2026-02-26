@@ -385,15 +385,15 @@ body {
 }
 
 .faqList {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: min-content;
-  align-items: start;
-  gap: 10px;
+  column-count: 2;
+  column-gap: 12px;
 }
 
 .faqItem {
-  align-self: start;
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  margin: 0 0 10px;
   height: auto;
 }
 
@@ -433,7 +433,6 @@ body {
   .servicesSplit,
   .resourceGrid,
   .blogList,
-  .faqList,
   .welcomeHero {
     grid-template-columns: 1fr !important;
   }
@@ -450,6 +449,11 @@ body {
     grid-column: auto;
     transform: none !important;
     animation-delay: 0ms !important;
+  }
+
+  .faqList {
+    column-count: 1;
+    column-gap: 0;
   }
 
   .contactForm {
