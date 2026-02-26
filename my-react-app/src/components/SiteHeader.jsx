@@ -7,9 +7,12 @@ export default function SiteHeader() {
   return (
     <header className="topbar">
       <div className="container topbar__inner">
-        <div className="brand">{text.brand}</div>
+        <Link to="/" className="brand">
+          {text.brand}
+        </Link>
 
         <nav className="nav">
+          <Link to="/">{text.common.home}</Link>
           <Link to="/welcome">{text.nav[0]}</Link>
           <Link to="/services">{text.nav[1]}</Link>
           <Link to="/contact">{text.nav[2]}</Link>

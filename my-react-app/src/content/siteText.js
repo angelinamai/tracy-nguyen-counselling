@@ -33,6 +33,7 @@ export const siteText = {
     footer: "All rights reserved",
 
     common: {
+      home: "Home",
       back: "Back",
       notFound: "404 - Not Found",
       required: "(required)",
@@ -338,6 +339,7 @@ export const siteText = {
     footer: "Bảo lưu mọi quyền",
 
     common: {
+      home: "Trang chủ",
       back: "Quay lại",
       notFound: "404 - Không tìm thấy",
       required: "(bắt buộc)",
