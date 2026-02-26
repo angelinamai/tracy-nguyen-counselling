@@ -2,6 +2,7 @@ import "./Blog.css";
 import { Link } from "react-router-dom";
 import { posts } from "../data/posts";
 import { useState } from "react";
+import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
 
 const POSTS_PER_PAGE = 4;
@@ -17,16 +18,7 @@ export default function Blog() {
 
   return (
     <div className="blogPage">
-      {/* ✅ Topbar */}
-      <header className="pageTopbar">
-        <div className="pageTopbarInner">
-          <Link to="/" className="backLink">
-            ← {text.common.back}
-          </Link>
-          <div className="brand">{text.brand}</div>
-          <div className="spacer" />
-        </div>
-      </header>
+      <SiteHeader />
 
       <div className="blogWrap">
         <h1 className="blogTitle">{text.blogPage.title}</h1>

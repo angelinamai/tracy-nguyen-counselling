@@ -1,5 +1,6 @@
 import "./ResourcesPage.css";
 import { Link } from "react-router-dom";
+import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
 
 function ResourceCard({ item }) {
@@ -35,17 +36,7 @@ export default function ResourcesPage() {
 
   return (
     <div className="resourcesPageWrap">
-      <header className="resourcesTopbar">
-        <div className="resourcesTopbarInner">
-          <Link to="/" className="tncBackLink">
-            <span className="resourcesBackArrow">←</span>
-            <span>{text.common.back}</span>
-          </Link>
-          <div className="resourcesBrand">{text.brand}</div>
-
-          <div style={{ width: 64 }} />
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="resourcesMain">
         <h1 className="resourcesTitle">{resources.title}</h1>

@@ -1,6 +1,6 @@
 import "./WelcomePage.css";
-import { Link } from "react-router-dom";
 import tracyPhoto from "../assets/Tracy-Nguyen.webp";
+import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
 
 export default function WelcomePage() {
@@ -9,17 +9,7 @@ export default function WelcomePage() {
 
   return (
     <div className="welcomePage">
-      <header className="pageTopbar">
-        <div className="pageTopbarInner">
-          <Link to="/" className="tncBackLink">
-            ← {text.common.back}
-          </Link>
-
-          <div className="brand">{text.brand}</div>
-
-          <div className="topbarRightPlaceholder"></div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="welcomeContainer">
         <h1 className="welcomeTitle">{welcome.title}</h1>

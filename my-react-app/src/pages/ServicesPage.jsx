@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./ServicesPage.css";
-import { Link } from "react-router-dom";
+import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
 
 export default function ServicesPage() {
@@ -10,15 +10,7 @@ export default function ServicesPage() {
 
   return (
     <div className="servicesPage">
-      <header className="pageTopbar">
-        <div className="pageTopbarInner">
-          <Link to="/" className="backLink">
-            ← {text.common.back}
-          </Link>
-          <div className="brand">{text.brand}</div>
-          <div className="spacer" />
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="servicesContainer">
         <section className="servicesHero">

@@ -1,7 +1,16 @@
-import { useEffect, useMemo, useState } from "react";
+import {
+  createElement,
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { siteText } from "./siteText";
 
-export function useSiteLang() {
+const SiteLangContext = createContext(null);
+
+export function SiteLangProvider({ children }) {
   const [lang, setLang] = useState(() => localStorage.getItem("lang") || "en");
 
   // Detect /vi in HashRouter: location.hash looks like "#/vi" or "#/vi/anything"
@@ -33,5 +42,15 @@ export function useSiteLang() {
     else window.location.hash = "#/";
   };
 
-  return { lang, text, toggleLang };
+  const value = useMemo(() => ({ lang, text, toggleLang }), [lang, text]);
+
+  return createElement(SiteLangContext.Provider, { value }, children);
+}
+
+export function useSiteLang() {
+  const ctx = useContext(SiteLangContext);
+  if (!ctx) {
+    throw new Error("useSiteLang must be used within <SiteLangProvider>");
+  }
+  return ctx;
 }

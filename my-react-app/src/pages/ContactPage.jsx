@@ -1,5 +1,5 @@
 import "./ContactPage.css";
-import { Link } from "react-router-dom";
+import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
 
 export default function ContactPage() {
@@ -8,16 +8,7 @@ export default function ContactPage() {
 
   return (
     <div className="contactPageWrap">
-      <header className="contactTopbar">
-        <div className="contactTopbarInner">
-          <Link to="/" className="tncBackLink">
-            ← {text.common.back}
-          </Link>
-
-          <div className="contactBrand">{text.brand}</div>
-          <div style={{ width: 64 }} />
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="contactMain">
         <h1 className="contactTitle">{contact.title}</h1>

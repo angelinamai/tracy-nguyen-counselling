@@ -1,18 +1,12 @@
 import "./MoneyStory.css";
-import { Link } from "react-router-dom";
-import { useSiteLang } from "../content/useSiteLang";
+import SiteHeader from "../components/SiteHeader";
 
 export default function MoneyStory() {
-  const { text } = useSiteLang();
-
   return (
     <div className="blogPage">
+      <SiteHeader />
       <div className="blogPage">
         <div className="blogWrap">
-          <Link to="/blog" className="backButton">
-            ← {text.common.back}
-          </Link>
-
           <article className="blogWrap">
             <h1 className="blogTitle">Why is it always about the money?</h1>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import "./FAQsPage.css";
+import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
 
 export default function FAQsPage() {
@@ -14,15 +14,7 @@ export default function FAQsPage() {
 
   return (
     <div className="faqPage">
-      <header className="faqTopbar">
-        <div className="faqTopbarInner">
-          <Link to="/" className="tncBackLink">
-            ← {text.common.back}
-          </Link>
-          <div className="faqBrand">{text.brand}</div>
-          <div className="faqSpacer" />
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="faqMain">
         <div className="faqCard">
