@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   FaFacebook,
-  FaXTwitter,
+  FaTwitter,
   FaInstagram,
   FaTiktok,
   FaLink,
-  FaXmark,
-} from "react-icons/fa6";
+  FaTimes,
+} from "react-icons/fa";
 import "./ShareMenu.css";
 import { useSiteLang } from "../content/useSiteLang";
 
@@ -83,7 +83,7 @@ export default function ShareMenu({
                 aria-label={share.closeAria}
                 onClick={() => setOpen(false)}
               >
-                <FaXmark />
+                <FaTimes />
               </button>
             </div>
 
@@ -103,7 +103,7 @@ export default function ShareMenu({
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaXTwitter /> X
+                <FaTwitter /> X
               </a>
 
               <button
