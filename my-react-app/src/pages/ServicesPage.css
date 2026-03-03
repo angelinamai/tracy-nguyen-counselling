@@ -177,7 +177,7 @@ transform: translateY(-1px);
 
 /* Left nav */
 .servicesNav {
-    background: rgba(255, 255, 255, 0.72);
+    background: #fff;
     border: 1px solid rgba(15, 23, 42, 0.10);
     border-radius: 18px;
     box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
@@ -193,12 +193,16 @@ transform: translateY(-1px);
     width: 100%;
     padding: 16px 16px;
     border: 0;
-background: rgba(37, 99, 235, 0.06);
+    background: #fff;
     text-align: left;
     cursor: pointer;
     transition: background 160ms ease, transform 120ms ease;
     position: relative;
     
+}
+
+.servicesTab:not(.active) {
+    background: #fff !important;
 }
 
 .servicesTab+.servicesTab {

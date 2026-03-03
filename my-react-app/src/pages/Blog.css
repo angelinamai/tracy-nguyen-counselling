@@ -150,26 +150,34 @@
 }
 
 .pageBtn {
-    border: 1px solid #ddd;
-    background: white;
-    padding: 8px 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 8px 12px !important;
+    border-radius: 999px !important;
+    border: 1px solid transparent !important;
+    background: transparent !important;
+    color: #5e6b93 !important;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    text-decoration: none;
     cursor: pointer;
-    border-radius: 8px;
-    transition: 0.2s;
+    transition: 170ms ease;
 }
 
 .pageBtn:hover {
-    background: #f3f3f3;
+    color: #1a2542 !important;
+    border-color: rgba(58, 108, 255, 0.28) !important;
+    background: rgba(58, 108, 255, 0.1) !important;
+    text-decoration: none;
 }
 
 .pageBtn.active {
-    background: #111827;
-    color: white;
-    border-color: #111827;
-}
-
-.pageBtn.next {
-    font-weight: 600;
+    color: #1a2542 !important;
+    border-color: rgba(58, 108, 255, 0.28) !important;
+    background: rgba(58, 108, 255, 0.1) !important;
 }
 
 .blogCard img {
@@ -178,32 +186,4 @@
 
 .blogCard:hover img {
     transform: scale(1.03);
-}
-.pageBtn.next {
-   
-    /* blue */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-/* Next button text: blue + underline */
-.pageBtn.next {
-    color: #2563eb;
-        font-weight: 600;
-        text-underline-offset: 3px;
-        background-color: transparent;
-        transition: all 0.2s ease;
-}
-
-.pageBtn.next:hover {
-background-color: #e0f2fe;
-    /* light blue */
-    color: #1d4ed8;
-    border-radius: 12px;
-    text-decoration: underline;
 }

@@ -1,0 +1,29 @@
+.aboutMain {
+  padding: 26px 0 56px;
+}
+
+.aboutCardFull {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 28px 30px !important;
+}
+
+.aboutPageTitle {
+  margin: 0 0 16px;
+  font-size: clamp(1.8rem, 2.6vw, 2.35rem);
+  line-height: 1.12;
+  color: rgba(11, 18, 32, 0.92);
+  font-weight: 700;
+}
+
+.aboutPageParagraph {
+  margin: 0 0 20px;
+  font-size: 1rem;
+  font-weight: 450;
+  line-height: 1.82;
+  color: rgba(11, 18, 32, 0.84);
+}
+
+.aboutPageParagraph:last-child {
+  margin-bottom: 0;
+}

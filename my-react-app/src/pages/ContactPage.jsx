@@ -18,7 +18,12 @@ export default function ContactPage() {
           <a href="mailto:tracyincounselling@gmail.com">
             tracyincounselling@gmail.com
           </a>{" "}
-          {contact.introMiddle} <a href="tel:+14168306425">(416) 830-6425</a>{" "}
+          <span className="contactCallLine">
+            {contact.introMiddle}{" "}
+            <a href="tel:+14168306425" className="contactPhoneLink">
+              {"(416)\u00A0830\u00A06425"}
+            </a>
+          </span>{" "}
           {contact.introEnd}
         </p>
 

@@ -284,21 +284,27 @@
     display: inline-block;
     padding: 10px 20px;
     border-radius: 999px;
-
-    background: var(--accent);
-    color: #fff;
+    border: 1px solid rgba(58, 108, 255, 0.32);
+    background: linear-gradient(135deg,
+            rgba(58, 108, 255, 0.12),
+            rgba(24, 184, 255, 0.08) 52%,
+            rgba(255, 255, 255, 0.92));
+    color: #1a2542;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 14px;
 
-    box-shadow: 0 6px 14px rgba(79, 111, 174, .18);
+    box-shadow: 0 8px 16px rgba(58, 108, 255, 0.16);
     transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 
 .resourcesCTAButton:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 20px rgba(79, 111, 174, .25);
-    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(58, 108, 255, 0.22);
+    background: linear-gradient(135deg,
+            rgba(58, 108, 255, 0.2),
+            rgba(24, 184, 255, 0.14) 52%,
+            rgba(255, 255, 255, 0.97));
 }
 
 /* =========================

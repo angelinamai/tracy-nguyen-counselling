@@ -4,7 +4,7 @@ export const siteText = {
     titleLine: "Registered Social Worker · MSW",
     badgeAccepting: "Accepting New Clients",
     badgeMode: "In-Person & Virtual",
-    nav: ["Welcome", "Services", "Contact", "Resources", "Blog", "FAQs"],
+    nav: ["Welcome", "About", "Services", "Contact", "Courses", "FAQs", "Resources", "Blog"],
     aboutTitle: "About",
     aboutText:
       "I am a Registered Social Worker with over a decade of experience in mental health and supportive counselling. As someone who immigrated to Canada at a young age, I understand the emotional complexity of change, identity, and belonging. I offer a supportive, non-judgmental space using evidence-based approaches to help you navigate anxiety, trauma, and relationship challenges at your own pace.",
@@ -15,7 +15,7 @@ export const siteText = {
     people: ["Individuals", "Couples", "Adults"],
     letsConnect: "Let's connect",
     bookSession: "Book a Session",
-    glanceTitle: "My Practice at a Glance",
+    glanceTitle: "How I Work",
     sessions: "Sessions",
     sessionsDesc: "In-person & online",
     location: "Location",
@@ -34,6 +34,7 @@ export const siteText = {
 
     common: {
       home: "Home",
+      menu: "Menu",
       back: "Back",
       notFound: "404 - Not Found",
       required: "(required)",
@@ -65,6 +66,12 @@ export const siteText = {
         "Instagram doesn't support direct website share from a button. We'll open IG and you can paste the link.",
       tiktokTitle:
         "TikTok doesn't support direct website share from a button. We'll open TikTok and you can paste the link.",
+    },
+
+    coursesPage: {
+      title: "Courses",
+      lead:
+        "Practical and culturally informed courses are coming soon. Reach out if you want early access updates.",
     },
 
     welcomePage: {
@@ -310,7 +317,7 @@ export const siteText = {
     titleLine: "Nhân viên Công tác Xã hội · MSW",
     badgeAccepting: "Hiện đang nhận khách mới",
     badgeMode: "Trực tiếp & Trực tuyến",
-    nav: ["Về Tôi", "Dịch Vụ", "Liên Hệ", "Tham Khảo", "Bài Viết", "Hỏi Đáp"],
+    nav: ["Chào mừng", "Về Tôi", "Dịch Vụ", "Liên Hệ", "Khóa học", "Hỏi Đáp", "Tham Khảo", "Bài Viết"],
     aboutTitle: "Về Tôi",
     aboutText:
       "Tôi là Nhân viên Công tác Xã hội đã đăng ký, với hơn 10 năm kinh nghiệm trong lĩnh vực sức khỏe tinh thần và tư vấn hỗ trợ. Là người nhập cư đến Canada từ khi còn nhỏ, tôi thấu hiểu những cảm xúc phức tạp liên quan đến thay đổi, bản sắc và cảm giác thuộc về. Tôi tạo ra một không gian an toàn, không phán xét và dựa trên các phương pháp có cơ sở khoa học để hỗ trợ bạn vượt qua lo âu, sang chấn và những khó khăn trong mối quan hệ - theo nhịp độ phù hợp với bạn.",
@@ -340,6 +347,7 @@ export const siteText = {
 
     common: {
       home: "Trang chủ",
+      menu: "Menu",
       back: "Quay lại",
       notFound: "404 - Không tìm thấy",
       required: "(bắt buộc)",
@@ -371,6 +379,12 @@ export const siteText = {
         "Instagram không hỗ trợ chia sẻ website trực tiếp từ nút này. Chúng tôi sẽ mở Instagram để bạn dán liên kết.",
       tiktokTitle:
         "TikTok không hỗ trợ chia sẻ website trực tiếp từ nút này. Chúng tôi sẽ mở TikTok để bạn dán liên kết.",
+    },
+
+    coursesPage: {
+      title: "Khóa học",
+      lead:
+        "Các khóa học thực tế và phù hợp bối cảnh văn hóa sẽ sớm ra mắt. Hãy liên hệ nếu bạn muốn nhận thông tin sớm.",
     },
 
     welcomePage: {

@@ -62,6 +62,17 @@
     text-decoration: underline;
 }
 
+.contactCallLine {
+    white-space: nowrap !important;
+    display: inline-block;
+}
+
+.contactIntro a[href^="tel:"],
+.contactPhoneLink {
+    white-space: nowrap !important;
+    display: inline-block;
+}
+
 .contactForm {
     max-width: 520px;
     margin: 0 auto;
@@ -100,16 +111,23 @@
     width: 100%;
     margin-top: 22px;
     padding: 12px 14px;
-    border: 0;
+    border: 1px solid rgba(58, 108, 255, 0.32);
     border-radius: 14px;
-    background: #2f6fec;
-    color: white;
+    background: linear-gradient(135deg,
+            rgba(58, 108, 255, 0.12),
+            rgba(24, 184, 255, 0.08) 52%,
+            rgba(255, 255, 255, 0.92));
+    color: #1a2542;
     font-weight: 700;
     cursor: pointer;
 }
 
 .contactSubmit:hover {
-    filter: brightness(0.97);
+    background: linear-gradient(135deg,
+            rgba(58, 108, 255, 0.2),
+            rgba(24, 184, 255, 0.14) 52%,
+            rgba(255, 255, 255, 0.97));
+    filter: none;
 }
 
 

@@ -10,6 +10,10 @@ import { useSiteLang } from "../content/useSiteLang";
 
 export default function HomePage() {
   const { text } = useSiteLang();
+  const locationMapUrl =
+    "https://www.google.com/maps/search/?api=1&query=36+Hiscott+Street%2C+St.+Catharines%2C+ON";
+  const [feesPrimary, ...feesRestParts] = text.feesDesc.split("·");
+  const feesSecondary = feesRestParts.join("·").trim();
 
   return (
     <div className="page">
@@ -116,9 +120,14 @@ export default function HomePage() {
               <span className="icon">📍</span>
               <div>
                 <div className="glanceTitle">{text.location}</div>
-                <div className="glanceText">
+                <a
+                  href={locationMapUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="glanceText glanceAddressLink"
+                >
                   {text.locationAddress}
-                </div>
+                </a>
               </div>
             </div>
 
@@ -139,7 +148,10 @@ export default function HomePage() {
               <span className="icon">💳</span>
               <div>
                 <div className="glanceTitle">{text.fees}</div>
-                <div className="glanceText">{text.feesDesc}</div>
+                <div className="glanceText">
+                  <span className="feesPrimary">{feesPrimary.trim()}</span>
+                  {feesSecondary ? <> · {feesSecondary}</> : null}
+                </div>
               </div>
             </div>
           </div>

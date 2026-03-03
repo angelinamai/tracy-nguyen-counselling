@@ -9,7 +9,7 @@ import "./design-system.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <SiteLangProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <App />
       </BrowserRouter>
     </SiteLangProvider>
