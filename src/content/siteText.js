@@ -1,13 +1,13 @@
 export const siteText = {
   en: {
-    brand: "Tracy Nguyen Counselling",
+    brand: "Tracy Nguyen Counseling",
     titleLine: "Registered Social Worker · MSW",
     badgeAccepting: "Accepting New Clients",
     badgeMode: "In-Person & Virtual",
     nav: ["Welcome", "About", "Services", "Contact", "Courses", "FAQs", "Resources", "Blog"],
     aboutTitle: "About",
     aboutText:
-      "I am a Registered Social Worker with over a decade of experience in mental health and supportive counselling. As someone who immigrated to Canada at a young age, I understand the emotional complexity of change, identity, and belonging. I offer a supportive, non-judgmental space using evidence-based approaches to help you navigate anxiety, trauma, and relationship challenges at your own pace.",
+      "I am a Registered Social Worker with over a decade of experience in mental health and supportive counseling. As someone who immigrated to Canada at a young age, I understand the emotional complexity of change, identity, and belonging. I offer a supportive, non-judgmental space using evidence-based approaches to help you navigate anxiety, trauma, and relationship challenges at your own pace.",
     officePhotos: "Office Photos",
     specialties: "Specialties",
     chips: ["Trauma & PTSD", "Anxiety", "Relationship Issues", "Stress", "Life Transitions"],
@@ -43,15 +43,15 @@ export const siteText = {
 
     emailButton: {
       button: "Email me",
-      ariaLabel: "Email Tracy Nguyen to inquire about counselling sessions",
-      subject: "Counselling Inquiry",
+      ariaLabel: "Email Tracy Nguyen to inquire about counseling sessions",
+      subject: "Counseling Inquiry",
       body:
-        "Hello Tracy,\n\nI'm interested in booking a counselling session and would love to learn more about your availability.\n\nThank you.",
+        "Hello Tracy,\n\nI'm interested in booking a counseling session and would love to learn more about your availability.\n\nThank you.",
     },
 
     shareMenu: {
-      defaultTitle: "Tracy Nguyen Counselling",
-      defaultText: "Check out Tracy Nguyen Counselling",
+      defaultTitle: "Tracy Nguyen Counseling",
+      defaultText: "Check out Tracy Nguyen Counseling",
       button: "Share",
       dialogLabel: "Share this page",
       title: "Share",
@@ -80,7 +80,7 @@ export const siteText = {
       photoAlt: "Tracy Nguyen",
       paragraphs: [
         "Have you ever been to therapy and felt that it was a total waste of time? Have you ever talked to a therapist and felt that they did not get you at all? I have been in your shoes, and I know how it feels. Whether you are seeking counseling or another perspective on your personal circumstance, a therapeutic relationship is most effective when you work with a therapist who you feel comfortable with and trust.",
-        "My counselling is a full-service approach. I want to share something practical that you can use for the rest of your life.",
+        "My counseling is a full-service approach. I want to share something practical that you can use for the rest of your life.",
         "Have you ever said Yes to a request, but you actually meant to say No? You do not want to hurt other people's feelings, but your people-pleasing comes at your own expense. We are wired to connect with others, but we all need to learn how to do that in a healthy way.",
         "Do you know anyone who takes anti-depressants and still feel depressed? I strongly believe it is because they haven't dealt with the root causes of their problems. When you can make sense of your pains and problems, you can make peace with your past and move on.",
         "As a Strength-Based Therapist, I offer a safe and confidential space for you to share your stories. If you are struggling with trauma, stress, anxiety or depression, I am here to help you discover new tools and strategies.",
@@ -101,22 +101,22 @@ export const siteText = {
         "Therapy for people navigating between cultures, expectations, and who they're allowed to become.",
       meta: "Online Sessions • 60 Minutes • Insurance Receipts Available",
       chips: ["Cultural Identity", "Family Expectations", "Adjustment & Belonging"],
-      counsellingTabTitle: "Counselling Services",
-      counsellingTabSub: "Mental Health, Trauma, and Relationship Stress",
+      counselingTabTitle: "Counseling Services",
+      counselingTabSub: "Mental Health, Trauma, and Relationship Stress",
       coachingTabTitle: "Life Coaching",
       coachingTabSub: "Clarity, Boundaries, Confidence, and Growth",
-      counsellingPanelTitle: "Counselling Services",
-      counsellingLead:
+      counselingPanelTitle: "Counseling Services",
+      counselingLead:
         "I provide counseling services for individuals who are experiencing a wide array of challenges, including:",
-      counsellingSection1Title: "Common Concerns",
-      counsellingSection1Items: [
+      counselingSection1Title: "Common Concerns",
+      counselingSection1Items: [
         "Inter-generational gaps and cultural identity crisis",
         "Issues with poor self image, self esteem and/or self worth",
         "Challenges of moving to another country - feeling homesick, loneliness or isolation",
         "Anxiety and Depression",
       ],
-      counsellingSection2Title: "Trauma, safety, and family stress",
-      counsellingSection2Items: [
+      counselingSection2Title: "Trauma, safety, and family stress",
+      counselingSection2Items: [
         "Childhood abuse/neglect",
         "Domestic violence/abuse",
         "Trauma and Post Traumatic Stress Disorder (PTSD)",
@@ -414,22 +414,22 @@ export const siteText = {
         "Trị liệu dành cho những người đang đi giữa khác biệt văn hóa, kỳ vọng và con người họ được phép trở thành.",
       meta: "Tư vấn trực tuyến • 60 phút • Có hóa đơn bảo hiểm",
       chips: ["Bản sắc văn hóa", "Kỳ vọng gia đình", "Thích nghi & cảm giác thuộc về"],
-      counsellingTabTitle: "Dịch vụ tư vấn",
-      counsellingTabSub: "Sức khỏe tinh thần, sang chấn và áp lực quan hệ",
+      counselingTabTitle: "Dịch vụ tư vấn",
+      counselingTabSub: "Sức khỏe tinh thần, sang chấn và áp lực quan hệ",
       coachingTabTitle: "Khai vấn cuộc sống",
       coachingTabSub: "Rõ ràng, ranh giới, tự tin và phát triển",
-      counsellingPanelTitle: "Dịch vụ tư vấn",
-      counsellingLead:
+      counselingPanelTitle: "Dịch vụ tư vấn",
+      counselingLead:
         "Tôi cung cấp dịch vụ tư vấn cho cá nhân đang trải qua nhiều khó khăn, bao gồm:",
-      counsellingSection1Title: "Những vấn đề thường gặp",
-      counsellingSection1Items: [
+      counselingSection1Title: "Những vấn đề thường gặp",
+      counselingSection1Items: [
         "Khoảng cách liên thế hệ và khủng hoảng bản sắc văn hóa",
         "Khó khăn về hình ảnh bản thân, lòng tự trọng và/hoặc giá trị bản thân",
         "Thử thách khi chuyển đến quốc gia mới - nhớ nhà, cô đơn hoặc tách biệt",
         "Lo âu và trầm cảm",
       ],
-      counsellingSection2Title: "Sang chấn, an toàn và căng thẳng gia đình",
-      counsellingSection2Items: [
+      counselingSection2Title: "Sang chấn, an toàn và căng thẳng gia đình",
+      counselingSection2Items: [
         "Lạm dụng/bỏ bê thời thơ ấu",
         "Bạo lực/lạm dụng gia đình",
         "Sang chấn và Rối loạn căng thẳng sau sang chấn (PTSD)",

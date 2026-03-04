@@ -1666,3 +1666,194 @@ body {
     height: 190px !important;
   }
 }
+
+/* ===== Navbar Variants (preview with ?nav=1..10) ===== */
+:root {
+  --nav-pill-pad-y: 12px;
+  --nav-pill-pad-x: 18px;
+  --nav-pill-min-h: 68px;
+  --nav-pill-item-h: 38px;
+  --nav-pill-radius: 999px;
+  --nav-item-radius: 12px;
+  --nav-pill-bg: rgba(248, 251, 255, 0.82);
+  --nav-pill-border: rgba(58, 108, 255, 0.2);
+  --nav-pill-shadow: 0 12px 26px rgba(26, 37, 66, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  --nav-inner-gap: 12px;
+  --nav-link-gap: 6px;
+  --nav-brand-size: 1.01rem;
+  --nav-brand-weight: 700;
+  --nav-link-size: 15px;
+  --nav-link-weight: 600;
+  --nav-link-color: #5a6c95;
+  --nav-item-pad-x: 12px;
+  --nav-item-pad-y: 8px;
+  --nav-hover-bg: rgba(58, 108, 255, 0.08);
+  --nav-hover-border: rgba(58, 108, 255, 0.22);
+}
+
+html[data-nav-pill="1"] {
+  --nav-pill-pad-y: 10px;
+  --nav-pill-pad-x: 16px;
+  --nav-pill-min-h: 62px;
+  --nav-pill-item-h: 36px;
+}
+
+html[data-nav-pill="2"] {
+  --nav-pill-pad-y: 12px;
+  --nav-pill-pad-x: 18px;
+  --nav-pill-min-h: 68px;
+  --nav-pill-item-h: 38px;
+}
+
+html[data-nav-pill="3"] {
+  --nav-pill-pad-y: 14px;
+  --nav-pill-pad-x: 20px;
+  --nav-pill-min-h: 72px;
+  --nav-pill-item-h: 40px;
+}
+
+html[data-nav-pill="4"] {
+  --nav-pill-pad-y: 16px;
+  --nav-pill-pad-x: 22px;
+  --nav-pill-min-h: 76px;
+  --nav-pill-item-h: 42px;
+}
+
+html[data-nav-pill="5"] {
+  --nav-pill-pad-y: 18px;
+  --nav-pill-pad-x: 24px;
+  --nav-pill-min-h: 82px;
+  --nav-pill-item-h: 44px;
+}
+
+/* 6. Clean Clinical */
+html[data-nav-pill="6"] {
+  --nav-pill-pad-y: 14px;
+  --nav-pill-pad-x: 20px;
+  --nav-pill-min-h: 72px;
+  --nav-pill-item-h: 40px;
+  --nav-pill-radius: 30px;
+  --nav-item-radius: 11px;
+  --nav-pill-bg: rgba(252, 254, 255, 0.92);
+  --nav-pill-border: rgba(104, 129, 180, 0.2);
+  --nav-pill-shadow: 0 8px 18px rgba(26, 37, 66, 0.09);
+  --nav-link-gap: 8px;
+  --nav-link-size: 15px;
+  --nav-link-weight: 600;
+}
+
+/* 7. Executive Minimal */
+html[data-nav-pill="7"] {
+  --nav-pill-pad-y: 11px;
+  --nav-pill-pad-x: 18px;
+  --nav-pill-min-h: 66px;
+  --nav-pill-item-h: 36px;
+  --nav-pill-radius: 20px;
+  --nav-item-radius: 9px;
+  --nav-pill-bg: rgba(255, 255, 255, 0.95);
+  --nav-pill-border: rgba(26, 37, 66, 0.14);
+  --nav-pill-shadow: 0 6px 14px rgba(26, 37, 66, 0.07);
+  --nav-link-gap: 6px;
+  --nav-link-size: 14px;
+  --nav-link-weight: 550;
+  --nav-link-color: #4d5f86;
+}
+
+/* 8. Soft Glass Premium */
+html[data-nav-pill="8"] {
+  --nav-pill-pad-y: 14px;
+  --nav-pill-pad-x: 22px;
+  --nav-pill-min-h: 74px;
+  --nav-pill-item-h: 40px;
+  --nav-pill-radius: 999px;
+  --nav-item-radius: 12px;
+  --nav-pill-bg: rgba(241, 247, 255, 0.74);
+  --nav-pill-border: rgba(119, 149, 210, 0.3);
+  --nav-pill-shadow: 0 14px 30px rgba(26, 37, 66, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  --nav-link-gap: 10px;
+  --nav-link-size: 15px;
+  --nav-link-weight: 600;
+  --nav-hover-bg: rgba(75, 122, 225, 0.09);
+}
+
+/* 9. Structured Editorial */
+html[data-nav-pill="9"] {
+  --nav-pill-pad-y: 12px;
+  --nav-pill-pad-x: 20px;
+  --nav-pill-min-h: 70px;
+  --nav-pill-item-h: 38px;
+  --nav-pill-radius: 16px;
+  --nav-item-radius: 8px;
+  --nav-pill-bg: rgba(255, 255, 255, 0.96);
+  --nav-pill-border: rgba(26, 37, 66, 0.14);
+  --nav-pill-shadow: 0 8px 18px rgba(26, 37, 66, 0.08);
+  --nav-link-gap: 4px;
+  --nav-link-size: 14px;
+  --nav-link-weight: 600;
+  --nav-link-color: #4f618b;
+}
+
+/* 10. Balanced Luxe */
+html[data-nav-pill="10"] {
+  --nav-pill-pad-y: 16px;
+  --nav-pill-pad-x: 24px;
+  --nav-pill-min-h: 78px;
+  --nav-pill-item-h: 42px;
+  --nav-pill-radius: 28px;
+  --nav-item-radius: 12px;
+  --nav-pill-bg: rgba(246, 250, 255, 0.9);
+  --nav-pill-border: rgba(74, 106, 179, 0.24);
+  --nav-pill-shadow: 0 16px 34px rgba(26, 37, 66, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  --nav-link-gap: 8px;
+  --nav-link-size: 15px;
+  --nav-link-weight: 600;
+  --nav-item-pad-x: 13px;
+}
+
+.topbar {
+  min-height: var(--nav-pill-min-h) !important;
+  display: flex;
+  align-items: center;
+  border-radius: var(--nav-pill-radius) !important;
+  background: var(--nav-pill-bg) !important;
+  border: 1px solid var(--nav-pill-border) !important;
+  box-shadow: var(--nav-pill-shadow) !important;
+}
+
+.topbar > .topbar__inner {
+  min-height: var(--nav-pill-min-h) !important;
+  padding: var(--nav-pill-pad-y) var(--nav-pill-pad-x) !important;
+  display: flex;
+  align-items: center !important;
+  gap: var(--nav-inner-gap) !important;
+}
+
+.topbar .brand,
+.topbar .nav {
+  align-self: center;
+}
+
+.topbar .brand {
+  font-size: var(--nav-brand-size) !important;
+  font-weight: var(--nav-brand-weight) !important;
+}
+
+.topbar .nav {
+  gap: var(--nav-link-gap) !important;
+}
+
+.topbar .nav a,
+.topbar .langBtn {
+  min-height: var(--nav-pill-item-h) !important;
+  font-size: var(--nav-link-size) !important;
+  font-weight: var(--nav-link-weight) !important;
+  color: var(--nav-link-color) !important;
+  border-radius: var(--nav-item-radius) !important;
+  padding: var(--nav-item-pad-y) var(--nav-item-pad-x) !important;
+}
+
+.topbar .nav a:hover,
+.topbar .langBtn:hover {
+  background: var(--nav-hover-bg) !important;
+  border-color: var(--nav-hover-border) !important;
+}

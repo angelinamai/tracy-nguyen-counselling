@@ -4,7 +4,7 @@ import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
 
 export default function ServicesPage() {
-  const [active, setActive] = useState("counselling");
+  const [active, setActive] = useState("counseling");
   const { text } = useSiteLang();
   const services = text.servicesPage;
 
@@ -31,12 +31,12 @@ export default function ServicesPage() {
           {/* Left: tabs */}
           <aside className="servicesNav">
             <button
-              className={`servicesTab ${active === "counselling" ? "active" : ""}`}
-              onClick={() => setActive("counselling")}
+              className={`servicesTab ${active === "counseling" ? "active" : ""}`}
+              onClick={() => setActive("counseling")}
               type="button"
             >
-              <div className="tabTitle">{services.counsellingTabTitle}</div>
-              <div className="tabSub">{services.counsellingTabSub}</div>
+              <div className="tabTitle">{services.counselingTabTitle}</div>
+              <div className="tabSub">{services.counselingTabSub}</div>
             </button>
 
             <button
@@ -51,16 +51,16 @@ export default function ServicesPage() {
 
           {/* Right: content */}
           <div className="servicesPanel">
-            {active === "counselling" ? (
+            {active === "counseling" ? (
               <>
-                <h2 className="panelTitle">{services.counsellingPanelTitle}</h2>
-                <p className="panelLead">{services.counsellingLead}</p>
+                <h2 className="panelTitle">{services.counselingPanelTitle}</h2>
+                <p className="panelLead">{services.counselingLead}</p>
 
                 <h3 className="servicesSectionTitle">
-                  {services.counsellingSection1Title}
+                  {services.counselingSection1Title}
                 </h3>
                 <ul className="servicesGridList">
-                  {services.counsellingSection1Items.map((item) => (
+                  {services.counselingSection1Items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -68,10 +68,10 @@ export default function ServicesPage() {
                 <div className="servicesMiniDivider" />
 
                 <h3 className="servicesSectionTitle">
-                  {services.counsellingSection2Title}
+                  {services.counselingSection2Title}
                 </h3>
                 <ul className="servicesGridList">
-                  {services.counsellingSection2Items.map((item) => (
+                  {services.counselingSection2Items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>

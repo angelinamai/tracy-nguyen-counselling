@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import FAQsPage from "./pages/FAQsPage";
@@ -13,6 +14,21 @@ import BlogPost from "./pages/BlogPost";
 import { useSiteLang } from "./content/useSiteLang";
 export default function App() {
   const { text } = useSiteLang();
+  const location = useLocation();
+
+  useEffect(() => {
+    const navVariant = new URLSearchParams(location.search).get("nav");
+    const isValidVariant = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"].includes(
+      navVariant || "",
+    );
+
+    if (isValidVariant) {
+      document.documentElement.setAttribute("data-nav-pill", navVariant);
+      return;
+    }
+
+    document.documentElement.removeAttribute("data-nav-pill");
+  }, [location.search]);
 
   return (
     <Routes>

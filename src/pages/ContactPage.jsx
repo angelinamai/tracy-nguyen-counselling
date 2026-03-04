@@ -15,8 +15,8 @@ export default function ContactPage() {
 
         <p className="contactIntro">
           {contact.introStart}{" "}
-          <a href="mailto:tracyincounselling@gmail.com">
-            tracyincounselling@gmail.com
+          <a href="mailto:tracyincounseling@gmail.com">
+            tracyincounseling@gmail.com
           </a>{" "}
           <span className="contactCallLine">
             {contact.introMiddle}{" "}
