@@ -74,6 +74,19 @@ export const siteText = {
         "Practical and culturally informed courses are coming soon. Reach out if you want early access updates.",
     },
 
+    aboutPage: {
+      title: "About Tracy",
+      paragraphs: [
+        "I am a registered Social Worker in good standing with the Ontario College of Social Workers and Social Service Workers.",
+        "I was born and raised in Vietnam. I came to Canada when I was 18 years old to study. And then, I decided to settle down here. I can understand what it feels like when you come from one country and emerge in a completely different one. You constantly have to juggle with different values, negotiate with different acceptances, and adjust to different belief systems.",
+        "After graduating from York University where I earned Master’s Degree in Social Work, I worked as a Clinical Social Worker for a mental health agency in Toronto. I also worked for a school board in Mississauga supporting international students with their practical and emotional needs so they can focus on studying well in school. When COVID hit, I decided to quit my office job, homeschooled my daughter and started my online counseling private practice. After living in Mississauga for a while, I moved to Niagara region and have been loving it here ever since.",
+        "I had trainings in Cognitive Behavioral Therapy (CBT) for anxiety and depression, Strength-based practice, Attachment-Focused Adult Psychotherapy,  Acceptance Commitment Therapy (ACT), Solution Focused Brief Therapy (SFBT), Motivational Interviewing, Mindfulness Meditation, and Trauma-informed counseling. I have over ten years of experience in supportive counseling, with a focus on helping people create change and reach their goals.",
+        "I also became a Master Practitioner in NLP (neurolinguistic programming) as I want to expand my counseling to coaching. I find that when your mind-brain-body are aligned, you become more self-aware, and you can make better choices. When you are well, you feel better, so you can do better. I can coach you to be at your best state, so you can communicate better and achieve more.",
+        "My passion is to help others work through emotional issues, so that they can have a more fulfilling life. In my practice, I use a variety of evidence-based strategies and techniques to help my clients improve their communications skills, experience breakthroughs, and make meaningful and long-lasting changes in their lives. I can appreciate how past wounds can contribute to your situation and I am here to offer my understanding and compassion as I help you discover your true self.",
+        "I currently live in St. Catharines, Ontario, Canada with my husband and daughter.",
+      ],
+    },
+
     welcomePage: {
       title: "Welcome",
       lead: "A private, confidential space for clarity, healing, and practical change.",
@@ -385,6 +398,19 @@ export const siteText = {
       title: "Khóa học",
       lead:
         "Các khóa học thực tế và phù hợp bối cảnh văn hóa sẽ sớm ra mắt. Hãy liên hệ nếu bạn muốn nhận thông tin sớm.",
+    },
+
+    aboutPage: {
+      title: "Về Tracy",
+      paragraphs: [
+        "Tôi là Nhân viên Công tác Xã hội đã đăng ký, đang hành nghề tốt theo quy định của Ontario College of Social Workers and Social Service Workers.",
+        "Tôi sinh ra và lớn lên tại Việt Nam. Tôi đến Canada năm 18 tuổi để đi học, sau đó quyết định định cư tại đây. Tôi hiểu cảm giác khi rời một đất nước để bước vào một môi trường hoàn toàn khác. Bạn luôn phải dung hòa nhiều giá trị, thích nghi với những mức độ chấp nhận khác nhau và điều chỉnh theo các hệ niềm tin khác nhau.",
+        "Sau khi tốt nghiệp Đại học York với bằng Thạc sĩ Công tác Xã hội, tôi làm Clinical Social Worker tại một cơ quan sức khỏe tinh thần ở Toronto. Tôi cũng từng làm việc cho một hội đồng trường ở Mississauga để hỗ trợ du học sinh về nhu cầu thực tế và cảm xúc, giúp các em tập trung học tập. Khi COVID xảy ra, tôi nghỉ công việc văn phòng, học cùng con tại nhà và bắt đầu phòng khám tư vấn trực tuyến của riêng mình. Sau một thời gian sống ở Mississauga, tôi chuyển đến vùng Niagara và đã rất yêu cuộc sống ở đây.",
+        "Tôi đã được đào tạo về Cognitive Behavioral Therapy (CBT) cho lo âu và trầm cảm, Strength-based practice, Attachment-Focused Adult Psychotherapy, Acceptance Commitment Therapy (ACT), Solution Focused Brief Therapy (SFBT), Motivational Interviewing, Mindfulness Meditation và tư vấn theo hướng trauma-informed. Tôi có hơn 10 năm kinh nghiệm trong tư vấn hỗ trợ, tập trung vào việc giúp thân chủ tạo thay đổi và đạt mục tiêu.",
+        "Tôi cũng trở thành Master Practitioner in NLP (neurolinguistic programming) vì muốn mở rộng từ tư vấn sang coaching. Tôi nhận thấy khi tâm trí - não bộ - cơ thể được đồng bộ, bạn sẽ tự nhận thức rõ hơn và đưa ra lựa chọn tốt hơn. Khi bạn khỏe hơn, bạn sẽ cảm thấy tốt hơn, và từ đó làm tốt hơn. Tôi có thể coaching để bạn ở trạng thái tốt nhất của mình, từ đó giao tiếp hiệu quả hơn và đạt được nhiều hơn.",
+        "Đam mê của tôi là giúp người khác vượt qua những khó khăn cảm xúc để có một cuộc sống trọn vẹn hơn. Trong thực hành của mình, tôi sử dụng nhiều chiến lược và kỹ thuật dựa trên bằng chứng để giúp thân chủ cải thiện kỹ năng giao tiếp, tạo đột phá và mang lại thay đổi ý nghĩa, bền vững trong cuộc sống. Tôi trân trọng việc những tổn thương trong quá khứ có thể góp phần vào hoàn cảnh hiện tại của bạn, và tôi ở đây để đồng hành bằng sự thấu hiểu và lòng trắc ẩn, giúp bạn khám phá con người thật của mình.",
+        "Hiện tại tôi sống ở St. Catharines, Ontario, Canada cùng chồng và con gái.",
+      ],
     },
 
     welcomePage: {
