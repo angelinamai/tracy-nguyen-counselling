@@ -2,10 +2,23 @@ import "./WelcomePage.css";
 import tracyPhoto from "../assets/Tracy-Nguyen.webp";
 import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
+import { useSEO } from "../seo/useSEO";
 
 export default function WelcomePage() {
-  const { text } = useSiteLang();
+  const { text, lang } = useSiteLang();
   const welcome = text.welcomePage;
+  const pageTitle = lang === "vi" ? "Chào mừng | Tracy Nguyen Counseling" : "Welcome | Tracy Nguyen Counseling";
+  const pageDescription =
+    lang === "vi"
+      ? "Không gian tư vấn bảo mật, an toàn và thực tế để hỗ trợ chữa lành và thay đổi."
+      : "A confidential and practical counseling space focused on healing, clarity, and lasting change.";
+
+  useSEO({
+    title: pageTitle,
+    description: pageDescription,
+    canonicalPath: "/welcome",
+    locale: lang === "vi" ? "vi_VN" : "en_CA",
+  });
 
   return (
     <div className="welcomePage">

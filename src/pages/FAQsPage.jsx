@@ -2,11 +2,24 @@ import { useState } from "react";
 import "./FAQsPage.css";
 import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
+import { useSEO } from "../seo/useSEO";
 
 export default function FAQsPage() {
   const [activeIndex, setActiveIndex] = useState(null);
-  const { text } = useSiteLang();
+  const { text, lang } = useSiteLang();
   const faqs = text.faqsPage.items;
+  const pageTitle = lang === "vi" ? "Hỏi đáp | Tracy Nguyen Counseling" : "FAQs | Tracy Nguyen Counseling";
+  const pageDescription =
+    lang === "vi"
+      ? "Các câu hỏi thường gặp về đặt lịch, chi phí, bảo hiểm và hình thức tư vấn."
+      : "Frequently asked questions about booking, fees, insurance, and session formats.";
+
+  useSEO({
+    title: pageTitle,
+    description: pageDescription,
+    canonicalPath: "/faqs",
+    locale: lang === "vi" ? "vi_VN" : "en_CA",
+  });
 
   const toggle = (index) => {
     setActiveIndex(activeIndex === index ? null : index);

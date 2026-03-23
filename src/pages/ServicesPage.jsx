@@ -2,11 +2,24 @@ import { useState } from "react";
 import "./ServicesPage.css";
 import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
+import { useSEO } from "../seo/useSEO";
 
 export default function ServicesPage() {
   const [active, setActive] = useState("counseling");
-  const { text } = useSiteLang();
+  const { text, lang } = useSiteLang();
   const services = text.servicesPage;
+  const pageTitle = lang === "vi" ? "Dịch vụ | Tracy Nguyen Counseling" : "Services | Tracy Nguyen Counseling";
+  const pageDescription =
+    lang === "vi"
+      ? "Dịch vụ tư vấn và khai vấn cuộc sống cho lo âu, sang chấn, bản sắc và mối quan hệ."
+      : "Counseling and life coaching services for anxiety, trauma, cultural identity, and relationships.";
+
+  useSEO({
+    title: pageTitle,
+    description: pageDescription,
+    canonicalPath: "/services",
+    locale: lang === "vi" ? "vi_VN" : "en_CA",
+  });
 
   return (
     <div className="servicesPage">

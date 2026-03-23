@@ -1,7 +1,28 @@
 import "./MoneyStory.css";
 import SiteHeader from "../components/SiteHeader";
+import { useSEO } from "../seo/useSEO";
+import { SEO_SITE_NAME } from "../seo/constants";
 
 export default function MoneyStory() {
+  useSEO({
+    title: `Why is it always about the money? | ${SEO_SITE_NAME}`,
+    description:
+      "A reflective article about family, money stress, and communication across generations.",
+    canonicalPath: "/blog/money",
+    locale: "en_CA",
+    type: "article",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "Why is it always about the money?",
+      datePublished: "2025-04-12",
+      author: {
+        "@type": "Person",
+        name: "Tracy Nguyen",
+      },
+    },
+  });
+
   return (
     <div className="blogPage">
       <SiteHeader />

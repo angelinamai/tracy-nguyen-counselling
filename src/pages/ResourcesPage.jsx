@@ -2,6 +2,7 @@ import "./ResourcesPage.css";
 import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
+import { useSEO } from "../seo/useSEO";
 
 function ResourceCard({ item }) {
   return (
@@ -31,8 +32,20 @@ function ResourceCard({ item }) {
 }
 
 export default function ResourcesPage() {
-  const { text } = useSiteLang();
+  const { text, lang } = useSiteLang();
   const resources = text.resourcesPage;
+  const pageTitle = lang === "vi" ? "Tài nguyên | Tracy Nguyen Counseling" : "Resources | Tracy Nguyen Counseling";
+  const pageDescription =
+    lang === "vi"
+      ? "Tuyển chọn sách, video và tổ chức hỗ trợ sức khỏe tinh thần đáng tin cậy."
+      : "Curated books, videos, and organizations for mental health support.";
+
+  useSEO({
+    title: pageTitle,
+    description: pageDescription,
+    canonicalPath: "/resources",
+    locale: lang === "vi" ? "vi_VN" : "en_CA",
+  });
 
   return (
     <div className="resourcesPageWrap">

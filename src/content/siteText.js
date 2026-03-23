@@ -154,15 +154,122 @@ export const siteText = {
 
     contactPage: {
       title: "Contact",
-      introStart: "To book an appointment please email me at",
-      introMiddle: "or call",
-      introEnd:
-        "or complete the form below and I will contact you within 24 hours.",
-      nameLabel: "Name",
-      emailLabel: "Email Address",
-      phoneLabel: "Phone Number",
-      messageLabel: "Tell me about yourself",
+      introPrefix: "To book an appointment, you can email",
+      introCall: "or call",
+      beforeAppointment:
+        "Before your appointment, please take a moment to complete the form below.",
+      completeFormCta: "Start The Form",
       submit: "Submit",
+      submitIntake: "Submit Intake Form",
+      questionnaire: {
+        title: "Preliminary Questionnaire",
+        intro: "Please complete this form before your first session.",
+        alerts: {
+          secondaryAreaLimit: "Please select up to 3 additional support areas.",
+        },
+        messages: {
+          sending: "Sending...",
+          success: "Your form has been sent successfully.",
+          error: "Something went wrong. Please try again.",
+          networkError:
+            "Unable to connect to the form server. Please ensure both client and API are running.",
+          serverError: "The server could not process your submission. Please try again.",
+          rateLimited:
+            "Too many submissions in a short time. Please wait a few minutes and try again.",
+        },
+        fields: {
+          primaryConcernsTitle: "Primary Concerns",
+          mainAreaLabel:
+            "What is the main area you are looking for support with at this time?",
+          secondaryAreaLabel:
+            "Select up to three other areas you may also want support with",
+          secondaryAreaHint: "You do not need to re-select the main area above.",
+          durationLabel: "How long have you been dealing with these challenges?",
+          impactLabel: "How much are these issues impacting your day-to-day?",
+          healthHabitsTitle: "Health & Habits",
+          physicalHealthLabel: "Rate your physical health",
+          sleepHabitsLabel: "Rate your sleep habits",
+          eatingHabitsLabel: "Rate your eating habits",
+          alcoholLabel: "How often do you drink alcohol?",
+          drugUseLabel: "How often do you engage in recreational drug use?",
+          copingLabel:
+            "How have you been coping with the problem(s) that brought you into therapy? What have you tried so far?",
+          careHistoryTitle: "Care History",
+          priorServicesLabel:
+            "Have you previously received any type of mental health services?",
+          selectAllHint: "Select all that apply.",
+          priorServicesFeedbackLabel:
+            "If yes, what did you like or not like about those services?",
+          expectationsLabel: "What do you expect from the counseling process?",
+          sessionLogisticsTitle: "Session Logistics",
+          sessionSettingsLabel: "What are your preferred settings for sessions?",
+          availabilityLabel:
+            "What is the best availability for your therapy appointments?",
+          bestPhoneLabel: "Best phone number to reach you at",
+          confirmationLabel:
+            "I confirm I completed this questionnaire before booking my first appointment.",
+          answerPlaceholder: "Your answer",
+          honeypotLabel: "Leave this field empty",
+        },
+        options: {
+          supportAreas: [
+            "ADHD",
+            "Anxiety (incl. panic, GAD, and social)",
+            "Anger management",
+            "Behavioral addiction",
+            "Depression, sadness, or low mood",
+            "Emotion regulation",
+            "Family conflict",
+            "Life transition/uncertainty",
+            "Parenting",
+            "Relationship challenges",
+            "Self-esteem",
+            "Sexual abuse/assault (including childhood sexual abuse)",
+            "Sleep concerns",
+            "Stress/burnout",
+            "Substance use or addiction",
+            "Trauma (single-incident)",
+            "Trauma (multiple incidents or ongoing)",
+            "Work or school issues",
+          ],
+          durationOptions: [
+            "Recently (1 month or less)",
+            "Within 2-6 months",
+            "6-12 months",
+            "12+ months",
+          ],
+          impactOptions: [
+            "Starting to impact / Impacting now and then",
+            "Moderate / Frequent impact",
+            "Significant / Regular impact",
+            "Serious and constant impact",
+          ],
+          healthRatings: ["Good", "Fair", "Poor"],
+          frequencyOptions: ["Daily", "Weekly/Monthly", "Infrequently/Never"],
+          priorServices: [
+            "No",
+            "Psychiatric services",
+            "Individual therapy",
+            "Couples/Family therapy",
+            "Group therapy",
+          ],
+          expectationOptions: [
+            "I want to find the right tools and techniques to deal with my issues.",
+            "I just need somebody to vent and listen to me.",
+            "I like to receive homework.",
+            "Other(s)",
+          ],
+          sessionSettings: ["Phone", "Video", "In-person"],
+          availabilityOptions: [
+            "I have a flexible schedule and can make most times work for therapy.",
+            "I require weekday daytime (between 9 am & 5 pm).",
+            "I require weekday evening (after 5:00 pm).",
+            "I could do evenings after 5 pm or weekends.",
+            "I require weekends.",
+            "I have limited flexibility (specific day/time) and need to provide specific times.",
+          ],
+        },
+      },
     },
 
     faqsPage: {
@@ -480,15 +587,119 @@ export const siteText = {
 
     contactPage: {
       title: "Liên hệ",
-      introStart: "Để đặt lịch hẹn, vui lòng email cho tôi tại",
-      introMiddle: "hoặc gọi",
-      introEnd:
-        "hoặc điền mẫu bên dưới và tôi sẽ liên hệ lại trong vòng 24 giờ.",
-      nameLabel: "Họ và tên",
-      emailLabel: "Địa chỉ email",
-      phoneLabel: "Số điện thoại",
-      messageLabel: "Hãy chia sẻ đôi điều về bạn",
+      introPrefix: "Để đặt lịch hẹn, vui lòng email",
+      introCall: "hoặc gọi",
+      beforeAppointment: "Trước buổi hẹn, vui lòng hoàn thành mẫu bên dưới.",
+      completeFormCta: "Hoàn thành mẫu bên dưới",
       submit: "Gửi",
+      submitIntake: "Gửi mẫu thông tin",
+      questionnaire: {
+        title: "Bảng câu hỏi sơ bộ",
+        intro: "Vui lòng hoàn thành mẫu này trước buổi tư vấn đầu tiên.",
+        alerts: {
+          secondaryAreaLimit: "Vui lòng chọn tối đa 3 lĩnh vực hỗ trợ bổ sung.",
+        },
+        messages: {
+          sending: "Đang gửi...",
+          success: "Mẫu của bạn đã được gửi thành công.",
+          error: "Đã xảy ra lỗi. Vui lòng thử lại.",
+          networkError:
+            "Không thể kết nối tới máy chủ biểu mẫu. Vui lòng đảm bảo client và API đều đang chạy.",
+          serverError: "Máy chủ không thể xử lý biểu mẫu lúc này. Vui lòng thử lại.",
+          rateLimited:
+            "Bạn đã gửi quá nhiều lần trong thời gian ngắn. Vui lòng đợi vài phút rồi thử lại.",
+        },
+        fields: {
+          primaryConcernsTitle: "Mối quan tâm chính",
+          mainAreaLabel: "Hiện tại bạn muốn được hỗ trợ chính ở lĩnh vực nào?",
+          secondaryAreaLabel:
+            "Chọn tối đa ba lĩnh vực khác mà bạn cũng muốn được hỗ trợ",
+          secondaryAreaHint: "Bạn không cần chọn lại lĩnh vực chính ở trên.",
+          durationLabel: "Bạn đã gặp những khó khăn này trong bao lâu?",
+          impactLabel: "Những vấn đề này ảnh hưởng đến cuộc sống hằng ngày của bạn ở mức nào?",
+          healthHabitsTitle: "Sức khỏe & thói quen",
+          physicalHealthLabel: "Đánh giá sức khỏe thể chất của bạn",
+          sleepHabitsLabel: "Đánh giá thói quen ngủ của bạn",
+          eatingHabitsLabel: "Đánh giá thói quen ăn uống của bạn",
+          alcoholLabel: "Bạn uống rượu/bia với tần suất như thế nào?",
+          drugUseLabel: "Bạn sử dụng chất kích thích giải trí với tần suất như thế nào?",
+          copingLabel:
+            "Bạn đã đối diện với những vấn đề khiến bạn tìm đến trị liệu như thế nào? Bạn đã thử những gì?",
+          careHistoryTitle: "Lịch sử hỗ trợ",
+          priorServicesLabel:
+            "Trước đây bạn đã từng nhận bất kỳ dịch vụ chăm sóc sức khỏe tinh thần nào chưa?",
+          selectAllHint: "Chọn tất cả đáp án phù hợp.",
+          priorServicesFeedbackLabel:
+            "Nếu có, bạn thích hoặc không thích điều gì ở những dịch vụ đó?",
+          expectationsLabel: "Bạn mong đợi điều gì từ quá trình tư vấn?",
+          sessionLogisticsTitle: "Thông tin buổi hẹn",
+          sessionSettingsLabel: "Hình thức buổi hẹn bạn ưu tiên là gì?",
+          availabilityLabel: "Khung thời gian phù hợp nhất cho lịch hẹn của bạn là khi nào?",
+          bestPhoneLabel: "Số điện thoại tốt nhất để liên hệ với bạn",
+          confirmationLabel:
+            "Tôi xác nhận đã hoàn thành bảng câu hỏi này trước khi đặt buổi hẹn đầu tiên.",
+          answerPlaceholder: "Câu trả lời của bạn",
+          honeypotLabel: "Để trống trường này",
+        },
+        options: {
+          supportAreas: [
+            "ADHD",
+            "Lo âu (bao gồm hoảng sợ, GAD và lo âu xã hội)",
+            "Quản lý cơn giận",
+            "Nghiện hành vi",
+            "Trầm cảm, buồn bã hoặc khí sắc thấp",
+            "Điều tiết cảm xúc",
+            "Xung đột gia đình",
+            "Chuyển giai đoạn cuộc sống/không chắc chắn",
+            "Nuôi dạy con",
+            "Khó khăn trong mối quan hệ",
+            "Lòng tự trọng",
+            "Lạm dụng/xâm hại tình dục (bao gồm lạm dụng tình dục thời thơ ấu)",
+            "Vấn đề giấc ngủ",
+            "Căng thẳng/kiệt sức",
+            "Sử dụng chất gây nghiện hoặc nghiện",
+            "Sang chấn (một sự kiện)",
+            "Sang chấn (nhiều sự kiện hoặc kéo dài)",
+            "Vấn đề công việc hoặc học tập",
+          ],
+          durationOptions: [
+            "Gần đây (1 tháng hoặc ít hơn)",
+            "Trong vòng 2-6 tháng",
+            "6-12 tháng",
+            "Hơn 12 tháng",
+          ],
+          impactOptions: [
+            "Bắt đầu ảnh hưởng / Thỉnh thoảng ảnh hưởng",
+            "Mức vừa / Ảnh hưởng thường xuyên",
+            "Mức đáng kể / Ảnh hưởng đều đặn",
+            "Mức nghiêm trọng và liên tục",
+          ],
+          healthRatings: ["Tốt", "Trung bình", "Kém"],
+          frequencyOptions: ["Hằng ngày", "Hằng tuần/Hằng tháng", "Hiếm khi/Không bao giờ"],
+          priorServices: [
+            "Chưa",
+            "Dịch vụ tâm thần",
+            "Trị liệu cá nhân",
+            "Trị liệu cặp đôi/gia đình",
+            "Trị liệu nhóm",
+          ],
+          expectationOptions: [
+            "Tôi muốn tìm công cụ và kỹ thuật phù hợp để xử lý vấn đề của mình.",
+            "Tôi chỉ cần một người lắng nghe để tôi giãi bày.",
+            "Tôi thích nhận bài tập về nhà.",
+            "Khác",
+          ],
+          sessionSettings: ["Điện thoại", "Video", "Trực tiếp"],
+          availabilityOptions: [
+            "Tôi có lịch linh hoạt và có thể sắp xếp hầu hết thời gian cho trị liệu.",
+            "Tôi cần lịch ban ngày trong tuần (9:00 sáng đến 5:00 chiều).",
+            "Tôi cần lịch buổi tối trong tuần (sau 5:00 chiều).",
+            "Tôi có thể tham gia buổi tối sau 5:00 hoặc cuối tuần.",
+            "Tôi chỉ có thể vào cuối tuần.",
+            "Lịch của tôi hạn chế (ngày/giờ cụ thể) và cần cung cấp thời gian cụ thể.",
+          ],
+        },
+      },
     },
 
     faqsPage: {

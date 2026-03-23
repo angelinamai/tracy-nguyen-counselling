@@ -4,12 +4,25 @@ import { posts } from "../data/posts";
 import { useState } from "react";
 import SiteHeader from "../components/SiteHeader";
 import { useSiteLang } from "../content/useSiteLang";
+import { useSEO } from "../seo/useSEO";
 
 const POSTS_PER_PAGE = 4;
 
 export default function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
   const { text, lang } = useSiteLang();
+  const pageTitle = lang === "vi" ? "Bài viết | Tracy Nguyen Counseling" : "Blog | Tracy Nguyen Counseling";
+  const pageDescription =
+    lang === "vi"
+      ? "Bài viết về sức khỏe tinh thần, mối quan hệ, lo âu, sang chấn và trải nghiệm văn hóa."
+      : "Articles on mental health, anxiety, trauma, relationships, and cross-cultural lived experience.";
+
+  useSEO({
+    title: pageTitle,
+    description: pageDescription,
+    canonicalPath: "/blog",
+    locale: lang === "vi" ? "vi_VN" : "en_CA",
+  });
 
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
 

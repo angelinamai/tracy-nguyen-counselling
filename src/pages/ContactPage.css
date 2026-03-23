@@ -1,226 +1,423 @@
 .contactPageWrap {
-    min-height: 100vh;
-    background: #fff;
-}
-
-.contactTopbar {
-    position: sticky;
-    top: 0;
-    background: rgba(255, 255, 255, 0.92);
-    border-bottom: 1px solid #e5e7eb;
-    backdrop-filter: blur(10px);
-    z-index: 50;
-}
-
-.contactTopbarInner {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 14px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.contactBrand {
-    font-weight: 700;
-}
-
-.contactBack {
-    text-decoration: none;
-    color: #374151;
-    border: 1px solid #e5e7eb;
-    padding: 8px 10px;
-    border-radius: 12px;
-}
-
-.contactBack:hover {
-    background: #f9fafb;
+  min-height: 100vh;
+  background: transparent;
+  --type-display: clamp(2.3rem, 4vw, 3.2rem);
+  --type-page-heading: clamp(1.6rem, 2.2vw, 2rem);
+  --type-section-heading: clamp(1.25rem, 1.6vw, 1.5rem);
+  --type-question: clamp(1rem, 1.15vw, 1.125rem);
+  --type-body: 1rem;
+  --type-option: clamp(0.875rem, 0.95vw, 0.9375rem);
+  --type-helper: clamp(0.8125rem, 0.9vw, 0.875rem);
+  --type-ui: 0.875rem;
+  --lh-tight: 1.22;
+  --lh-heading: 1.32;
+  --lh-body: 1.6;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 }
 
 .contactMain {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 18px 60px;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 40px 18px 72px;
 }
 
 .contactTitle {
-    font-size: 44px;
-    margin: 0 0 14px 0;
-    text-align: center;
+  font-size: var(--type-display);
+  margin: 0 0 14px;
+  text-align: center;
+  color: #17233d;
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-bold);
 }
 
 .contactIntro {
-    max-width: 720px;
-    margin: 0 auto 28px auto;
-    color: #6b7280;
-    line-height: 1.8;
-    text-align: center;
+  max-width: 780px;
+  margin: 0 auto 20px;
+  color: #5f6f93;
+  line-height: var(--lh-body);
+  text-align: center;
+  font-size: var(--type-body);
+  font-weight: var(--fw-regular);
 }
 
 .contactIntro a {
-    color: #111827;
-    text-decoration: underline;
+  color: #111827;
+  text-decoration: underline;
 }
 
 .contactCallLine {
-    white-space: nowrap !important;
-    display: inline-block;
+  white-space: nowrap !important;
+  display: inline-block;
 }
 
 .contactIntro a[href^="tel:"],
 .contactPhoneLink {
-    white-space: nowrap !important;
-    display: inline-block;
+  white-space: nowrap !important;
+  display: inline-block;
+}
+
+.contactRequirement {
+  max-width: 840px;
+  margin: 0 auto 16px;
+  color: #374a74;
+  line-height: var(--lh-body);
+  text-align: center;
+  font-size: var(--type-body);
+  font-weight: var(--fw-medium);
+}
+
+.contactCtaWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.contactFormCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 240px;
+  padding: 12px 20px;
+  border: 1px solid #1a2333;
+  border-radius: 8px;
+  background: #1a2333;
+  color: #fff;
+  font-size: var(--type-body);
+  line-height: 1.35;
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  cursor: pointer;
+  transition: 180ms ease;
+}
+
+.contactFormCta:hover {
+  background: #25344e;
+  border-color: #25344e;
 }
 
 .contactForm {
-    max-width: 520px;
-    margin: 0 auto;
+  max-width: 920px;
+  margin: 0 auto;
 }
 
-.contactForm label {
-    display: block;
-    font-weight: 700;
-    margin-top: 16px;
-    margin-bottom: 8px;
-    color: #111827;
+.honeypotField {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
-
-.contactForm label span {
-    font-weight: 400;
-    color: #6b7280;
-}
-
-.contactForm input,
-.contactForm textarea {
-    width: 100%;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 12px 12px;
-    font-size: 15px;
-    outline: none;
-}
-
-.contactForm input:focus,
-.contactForm textarea:focus {
-    border-color: #2f6fec;
-    box-shadow: 0 0 0 4px rgba(47, 111, 236, 0.12);
-}
-
-.contactSubmit {
-    width: 100%;
-    margin-top: 22px;
-    padding: 12px 14px;
-    border: 1px solid rgba(58, 108, 255, 0.32);
-    border-radius: 14px;
-    background: linear-gradient(135deg,
-            rgba(58, 108, 255, 0.12),
-            rgba(24, 184, 255, 0.08) 52%,
-            rgba(255, 255, 255, 0.92));
-    color: #1a2542;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.contactSubmit:hover {
-    background: linear-gradient(135deg,
-            rgba(58, 108, 255, 0.2),
-            rgba(24, 184, 255, 0.14) 52%,
-            rgba(255, 255, 255, 0.97));
-    filter: none;
-}
-
 
 .questionnaire {
-    max-width: 720px;
-    margin: 40px auto 0;
-    padding-top: 24px;
-    border-top: 1px solid #e5e7eb;
+  --q-bg: #d9e5f8;
+  --q-border: #c2d2ec;
+  --q-heading: #15213a;
+  --q-question: #1d2b49;
+  --q-option: #23375b;
+  max-width: 920px;
+  margin: 0 auto;
 }
 
 .qTitle {
-    font-size: 24px;
-    margin: 0 0 10px;
-    text-align: center;
+  font-size: var(--type-page-heading);
+  margin: 0 0 8px;
+  text-align: center;
+  color: #15223a;
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-bold);
 }
 
 .qText {
-    text-align: center;
-    color: rgba(15, 23, 42, 0.75);
-    margin: 0 auto 18px;
-    line-height: 1.7;
-    max-width: 620px;
+  text-align: center;
+  color: rgba(22, 34, 58, 0.74);
+  margin: 0 auto 24px;
+  line-height: var(--lh-body);
+  max-width: 720px;
+  font-size: var(--type-body);
+  font-weight: var(--fw-regular);
 }
 
-.qForm {
-    max-width: 720px;
-    margin: 0 auto;
+.qLayout {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.qSection {
+  border: 1px solid var(--q-border);
+  border-radius: 36px;
+  background: var(--q-bg);
+  padding: 34px 36px;
+}
+
+.qSectionTitle {
+  margin: 0 0 14px;
+  font-size: var(--type-section-heading);
+  line-height: var(--lh-heading);
+  color: var(--q-heading);
+  font-weight: var(--fw-bold);
+}
+
+#q-concerns,
+#q-logistics {
+  grid-column: span 2;
+}
+
+.qFieldset {
+  margin: 22px 0 0;
+  padding: 0;
+  border: 0;
 }
 
 .qLabel {
-    display: block;
-    font-weight: 700;
-    margin: 18px 0 10px;
-    color: #111827;
+  display: block;
+  margin: 0 0 12px;
+  color: var(--q-question);
+  font-size: var(--type-question);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-medium);
+}
+
+.qHint {
+  margin: -4px 0 10px;
+  color: rgba(27, 43, 71, 0.62);
+  font-size: var(--type-helper);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
 }
 
 .qOptions {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 6px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.qOptionsInline {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .qOption {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 12px;
-    background: #fff;
+  display: flex;
+  gap: 11px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 0;
+  border-radius: 0;
+  padding: 5px 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .qOption input {
-    margin-top: 3px;
+  margin-top: 2px;
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+  accent-color: #1d2638;
+}
+
+.qOption span {
+  color: var(--q-option);
+  font-size: var(--type-option);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-body);
+}
+
+.qOptionText {
+  display: block;
+  flex: 1;
+  min-width: 0;
+}
+
+.qOptions--choices .qOption--choice {
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.qOptions--choices .qOption--choice .qOptionText {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Primary Concerns polish: calmer typography + tighter spacing */
+#q-concerns {
+  padding: 28px 30px;
+}
+
+#q-concerns .qSectionTitle {
+  font-size: var(--type-section-heading);
+  line-height: var(--lh-heading);
+  margin-bottom: 10px;
+}
+
+#q-concerns .qFieldset {
+  margin-top: 16px;
+}
+
+#q-concerns .qFieldset:first-of-type {
+  margin-top: 12px;
+}
+
+#q-concerns .qFieldset:first-of-type .qLabel {
+  font-size: var(--type-question);
+  line-height: var(--lh-body);
+  margin-bottom: 8px;
+}
+
+#q-concerns .qOptions--choices {
+  gap: 7px;
+}
+
+#q-concerns .qOptions--choices .qOption--choice {
+  gap: 10px;
+  padding: 3px 0;
+}
+
+#q-concerns .qOptions--choices .qOptionText {
+  font-size: var(--type-option);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-medium);
+}
+
+.contactForm input:not([type="radio"]):not([type="checkbox"]),
+.qTextarea {
+  width: 100%;
+  border: 1px solid rgba(28, 43, 71, 0.2);
+  border-radius: 12px;
+  padding: 13px 14px;
+  font-size: var(--type-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  outline: none;
+  color: #1a2741;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.contactForm input:not([type="radio"]):not([type="checkbox"])::placeholder,
+.qTextarea::placeholder {
+  color: rgba(26, 39, 65, 0.5);
+  font-size: inherit;
+}
+
+.contactForm input:not([type="radio"]):not([type="checkbox"]):focus,
+.qTextarea:focus {
+  border-color: #4d73be;
+  box-shadow: 0 0 0 4px rgba(77, 115, 190, 0.12);
 }
 
 .qTextarea {
+  min-height: 116px;
+}
+
+.qConfirm {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 20px;
+  color: #26344e;
+  font-size: var(--type-helper);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-medium);
+}
+
+.qConfirm input {
+  margin-top: 3px;
+  width: auto;
+}
+
+.contactSubmit {
+  width: auto;
+  min-width: 132px;
+  margin-top: 26px;
+  padding: 12px 24px;
+  border: 1px solid #1a2333;
+  border-radius: 8px;
+  background: #1a2333;
+  color: #fff;
+  font-size: var(--type-body);
+  line-height: 1.35;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: 180ms ease;
+}
+
+.contactSubmit:disabled {
+  opacity: 0.78;
+  cursor: not-allowed;
+}
+
+.contactSubmit:hover {
+  background: #25344e;
+  border-color: #25344e;
+}
+
+.contactFormStatus {
+  margin-top: 12px;
+  color: #1f3e6f;
+  font-size: var(--type-helper);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-medium);
+}
+
+.contactFormStatusError {
+  color: #8a2838;
+}
+
+@media (max-width: 980px) {
+  .qLayout {
+    grid-template-columns: 1fr;
+  }
+
+  #q-concerns,
+  #q-logistics {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .contactPageWrap {
+    --type-display: 2.05rem;
+    --type-page-heading: 1.45rem;
+    --type-section-heading: 1.18rem;
+    --type-question: 0.98rem;
+    --type-option: 0.9rem;
+    --type-helper: 0.82rem;
+  }
+
+  .qSection {
+    padding: 24px 18px;
+    border-radius: 26px;
+  }
+
+  #q-concerns {
+    padding: 22px 16px;
+  }
+
+  #q-concerns .qSectionTitle {
+    font-size: var(--type-section-heading);
+  }
+
+  #q-concerns .qFieldset:first-of-type .qLabel {
+    font-size: var(--type-question);
+  }
+
+  #q-concerns .qOptions--choices .qOptionText {
+    font-size: var(--type-option);
+  }
+
+  .qTitle {
+    font-size: var(--type-page-heading);
+  }
+
+  .qOptionsInline {
+    grid-template-columns: 1fr;
+  }
+
+  .contactSubmit {
     width: 100%;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 12px;
-    font-size: 15px;
-    outline: none;
-}
-
-.qTextarea:focus {
-    border-color: #2f6fec;
-    box-shadow: 0 0 0 4px rgba(47, 111, 236, 0.12);
-}
-
-/* input text */
-.contactPage input,
-.contactPage textarea {
-    color: #0f172a;
-    /* same black used in headings */
-}
-
-/* placeholder hint text */
-.contactPage input::placeholder,
-.contactPage textarea::placeholder {
-    color: #9ca3af;
-}
-
-/* label text (Name, Email etc) */
-.contactPage label {
-    color: #0f172a;
-
-}
-
-/* the (required) text */
-.contactPage span {
-    color: #0f172a;
-    opacity: 0.6;
-    /* keeps it softer but not disabled grey */
+    font-size: var(--type-body);
+  }
 }

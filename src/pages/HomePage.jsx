@@ -7,13 +7,45 @@ import ShareMenu from "../components/ShareMenu";
 import SiteHeader from "../components/SiteHeader";
 import { Link } from "react-router-dom";
 import { useSiteLang } from "../content/useSiteLang";
+import { useSEO } from "../seo/useSEO";
+import { SEO_SITE_NAME } from "../seo/constants";
 
 export default function HomePage() {
-  const { text } = useSiteLang();
+  const { text, lang } = useSiteLang();
   const locationMapUrl =
     "https://www.google.com/maps/search/?api=1&query=36+Hiscott+Street%2C+St.+Catharines%2C+ON";
   const [feesPrimary, ...feesRestParts] = text.feesDesc.split("·");
   const feesSecondary = feesRestParts.join("·").trim();
+  const pageTitle =
+    lang === "vi"
+      ? "Tư vấn với Tracy Nguyen | Nhân viên Công tác Xã hội"
+      : "Tracy Nguyen Counseling | Registered Social Worker";
+  const pageDescription =
+    lang === "vi"
+      ? "Tư vấn trực tiếp và trực tuyến tại St. Catharines cho lo âu, sang chấn, mối quan hệ và chuyển giai đoạn cuộc sống."
+      : "In-person and virtual counseling in St. Catharines for anxiety, trauma, relationships, and life transitions.";
+
+  useSEO({
+    title: pageTitle,
+    description: pageDescription,
+    canonicalPath: "/",
+    locale: lang === "vi" ? "vi_VN" : "en_CA",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      name: SEO_SITE_NAME,
+      telephone: "+1-416-830-6425",
+      email: "tracyincounseling@gmail.com",
+      areaServed: "Ontario, Canada",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "36 Hiscott Street",
+        addressLocality: "St. Catharines",
+        addressRegion: "ON",
+        addressCountry: "CA",
+      },
+    },
+  });
 
   return (
     <div className="page">
