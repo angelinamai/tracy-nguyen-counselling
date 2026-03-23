@@ -76,7 +76,7 @@ export default function PreliminaryQuestionnaireForm({ text, contact }) {
         fields: normalizeFormData(formData),
       };
 
-      const response = await fetch("/api/contact-intake", {
+      const response = await fetch("http://localhost:8787/api/contact-intake", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
