@@ -7,6 +7,7 @@ export default function PreliminaryQuestionnaireForm({ text, contact }) {
   const qMessages = questionnaire.messages;
   const [submitState, setSubmitState] = useState("idle");
   const [submitError, setSubmitError] = useState("");
+  const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
 
   const handleSecondaryAreaChange = (event) => {
     if (!event.target.checked) {
@@ -76,7 +77,7 @@ export default function PreliminaryQuestionnaireForm({ text, contact }) {
         fields: normalizeFormData(formData),
       };
 
-      const response = await fetch("http://localhost:8787/api/contact-intake", {
+      const response = await fetch(`${apiBaseUrl}/api/contact-intake`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
