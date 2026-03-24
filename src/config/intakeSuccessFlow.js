@@ -1,4 +1,4 @@
-export const INTAKE_SUCCESS_MODES = Object.freeze(["inline", "v4"]);
+export const INTAKE_SUCCESS_MODES = Object.freeze(["v4"]);
 
 const DEFAULT_MODE = "v4";
 
