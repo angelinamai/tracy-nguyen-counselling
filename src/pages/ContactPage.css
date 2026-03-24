@@ -112,8 +112,8 @@
 }
 
 .questionnaire {
-  --q-bg: #d9e5f8;
-  --q-border: #c2d2ec;
+  --q-bg: #e6eefc;
+  --q-border: #cfdbf2;
   --q-heading: #15213a;
   --q-question: #1d2b49;
   --q-option: #23375b;
@@ -140,17 +140,40 @@
   font-weight: var(--fw-regular);
 }
 
+.qCalmNote {
+  margin: -8px auto 8px;
+  max-width: 720px;
+  text-align: center;
+  color: rgba(31, 51, 86, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  font-weight: var(--fw-medium);
+}
+
+.qRequiredLegend {
+  margin: 0 auto 26px;
+  max-width: 720px;
+  text-align: center;
+  color: rgba(43, 64, 102, 0.64);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.01em;
+}
+
 .qLayout {
   display: grid;
-  gap: 18px;
+  gap: 22px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .qSection {
   border: 1px solid var(--q-border);
   border-radius: 36px;
-  background: var(--q-bg);
-  padding: 34px 36px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.28)),
+    var(--q-bg);
+  padding: 38px 40px;
 }
 
 .qSectionTitle {
@@ -161,24 +184,53 @@
   font-weight: var(--fw-bold);
 }
 
+.qSectionHint {
+  margin: -4px 0 14px;
+  color: rgba(32, 53, 91, 0.62);
+  font-size: 0.84rem;
+  line-height: 1.56;
+  font-weight: var(--fw-medium);
+}
+
 #q-concerns,
 #q-logistics {
   grid-column: span 2;
 }
 
 .qFieldset {
-  margin: 22px 0 0;
+  margin: 26px 0 0;
   padding: 0;
   border: 0;
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .qLabel {
   display: block;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   color: var(--q-question);
   font-size: var(--type-question);
   line-height: var(--lh-body);
   font-weight: var(--fw-medium);
+}
+
+.qRequiredMark {
+  display: inline-block;
+  margin-left: 4px;
+  color: rgba(53, 78, 128, 0.78);
+  font-size: 0.82em;
+  transform: translateY(-0.14em);
+}
+
+.qSrOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .qHint {
@@ -192,7 +244,7 @@
 .qOptions {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 13px;
 }
 
 .qOptionsInline {
@@ -201,22 +253,62 @@
 
 .qOption {
   display: flex;
-  gap: 11px;
+  gap: 12px;
   justify-content: flex-start;
   align-items: flex-start;
-  border: 0;
-  border-radius: 0;
-  padding: 5px 0;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 7px 8px;
   background: transparent;
   cursor: pointer;
+  transition: border-color 170ms ease, background 170ms ease, box-shadow 170ms ease;
 }
 
-.qOption input {
+.qOption input[type="checkbox"] {
   margin-top: 2px;
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
   accent-color: #1d2638;
+}
+
+.qOption input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  margin-top: 1px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.7px solid rgba(76, 101, 145, 0.52);
+  background: rgba(255, 255, 255, 0.82);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: border-color 170ms ease, box-shadow 170ms ease, background 170ms ease;
+}
+
+.qOption input[type="radio"]::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4d73be;
+  transform: scale(0);
+  transition: transform 140ms ease;
+}
+
+.qOption input[type="radio"]:checked {
+  border-color: #4d73be;
+  background: #f8fbff;
+}
+
+.qOption input[type="radio"]:checked::after {
+  transform: scale(1);
+}
+
+.qOption input[type="radio"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(77, 115, 190, 0.2);
 }
 
 .qOption span {
@@ -224,6 +316,7 @@
   font-size: var(--type-option);
   font-weight: var(--fw-medium);
   line-height: var(--lh-body);
+  transition: color 160ms ease, font-weight 160ms ease;
 }
 
 .qOptionText {
@@ -244,7 +337,7 @@
 
 /* Primary Concerns polish: calmer typography + tighter spacing */
 #q-concerns {
-  padding: 28px 30px;
+  padding: 34px 34px;
 }
 
 #q-concerns .qSectionTitle {
@@ -254,26 +347,26 @@
 }
 
 #q-concerns .qFieldset {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 #q-concerns .qFieldset:first-of-type {
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 #q-concerns .qFieldset:first-of-type .qLabel {
   font-size: var(--type-question);
   line-height: var(--lh-body);
-  margin-bottom: 8px;
+  margin-bottom: 11px;
 }
 
 #q-concerns .qOptions--choices {
-  gap: 7px;
+  gap: 10px;
 }
 
 #q-concerns .qOptions--choices .qOption--choice {
   gap: 10px;
-  padding: 3px 0;
+  padding: 7px 8px;
 }
 
 #q-concerns .qOptions--choices .qOptionText {
@@ -285,15 +378,17 @@
 .contactForm input:not([type="radio"]):not([type="checkbox"]),
 .qTextarea {
   width: 100%;
-  border: 1px solid rgba(28, 43, 71, 0.2);
-  border-radius: 12px;
-  padding: 13px 14px;
+  border: 1px solid rgba(42, 63, 99, 0.24);
+  border-radius: 14px;
+  padding: 14px 16px;
   font-size: var(--type-body);
   line-height: var(--lh-body);
   font-weight: var(--fw-regular);
   outline: none;
   color: #1a2741;
-  background: rgba(255, 255, 255, 0.84);
+  background: rgba(255, 253, 251, 0.93);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 .contactForm input:not([type="radio"]):not([type="checkbox"])::placeholder,
@@ -304,12 +399,147 @@
 
 .contactForm input:not([type="radio"]):not([type="checkbox"]):focus,
 .qTextarea:focus {
-  border-color: #4d73be;
-  box-shadow: 0 0 0 4px rgba(77, 115, 190, 0.12);
+  border-color: #5b7fc8;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 0 0 4px rgba(91, 127, 200, 0.14);
 }
 
 .qTextarea {
   min-height: 116px;
+}
+
+.validationStyle .qFieldsetInvalid {
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 12px 10px 10px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+}
+
+.validationStyle .qInputInvalid {
+  border-color: rgba(174, 123, 137, 0.62) !important;
+}
+
+.validationStyle .qConfirmInvalid {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: rgba(249, 241, 244, 0.72);
+}
+
+.validationStyle .qConfirmInvalid input {
+  accent-color: #91526a;
+}
+
+.validationStyle .qFieldError {
+  margin: 9px 0 0;
+  color: #7a5562;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.validationStyle--v1 .qFieldsetInvalid {
+  border-color: rgba(175, 130, 145, 0.36);
+  background: rgba(250, 243, 246, 0.86);
+  box-shadow: 0 10px 18px rgba(152, 103, 119, 0.1);
+}
+
+.validationStyle--v1 .qInputInvalid {
+  background: rgba(255, 248, 251, 0.96);
+  box-shadow: 0 0 0 4px rgba(178, 131, 146, 0.13);
+}
+
+.validationStyle--v2 .qFieldsetInvalid {
+  border-color: rgba(183, 136, 149, 0.44);
+  background: linear-gradient(180deg, rgba(252, 245, 247, 0.9), rgba(255, 251, 252, 0.74));
+  box-shadow: 0 14px 24px rgba(156, 114, 126, 0.13);
+}
+
+.validationStyle--v2 .qInputInvalid {
+  border-color: rgba(183, 136, 149, 0.66) !important;
+  background: rgba(255, 250, 251, 0.98);
+  box-shadow: 0 0 0 6px rgba(183, 136, 149, 0.12);
+}
+
+.validationStyle--v2 .qFieldError {
+  color: #7d5863;
+}
+
+.validationStyle--v3 .qFieldsetInvalid {
+  border-color: rgba(171, 132, 123, 0.42);
+  background: linear-gradient(180deg, rgba(253, 249, 247, 0.92), rgba(247, 241, 236, 0.7));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 10px 24px rgba(122, 81, 54, 0.13);
+}
+
+.validationStyle--v3 .qInputInvalid {
+  border-color: rgba(171, 132, 123, 0.56) !important;
+  background: rgba(255, 249, 246, 0.97);
+  box-shadow: 0 0 0 4px rgba(171, 132, 123, 0.12);
+}
+
+.validationStyle--v3 .qFieldError {
+  color: #775a5d;
+}
+
+.validationStyle--v4 .qFieldsetInvalid {
+  border-color: rgba(180, 135, 146, 0.34);
+  background: rgba(252, 246, 248, 0.78);
+  box-shadow: 0 12px 18px rgba(160, 113, 124, 0.09);
+}
+
+.validationStyle--v4 .qFieldError {
+  position: relative;
+  margin-top: 10px;
+  padding-left: 14px;
+  color: #7d5b65;
+}
+
+.validationStyle--v4 .qFieldError::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(171, 117, 133, 0.72);
+}
+
+.validationStyle--v4 .qInputInvalid {
+  border-color: rgba(180, 135, 146, 0.56) !important;
+  background: rgba(255, 251, 252, 0.98);
+  box-shadow: 0 8px 20px rgba(163, 122, 134, 0.13);
+}
+
+.validationStyle--v5 .qFieldsetInvalid {
+  border-color: rgba(161, 125, 157, 0.36);
+  background:
+    linear-gradient(140deg, rgba(255, 248, 252, 0.9), rgba(249, 245, 255, 0.78)),
+    rgba(255, 255, 255, 0.8);
+  box-shadow: 0 14px 26px rgba(132, 95, 126, 0.13);
+}
+
+.validationStyle--v5 .qInputInvalid {
+  border-color: rgba(161, 125, 157, 0.58) !important;
+  background: rgba(255, 250, 253, 0.97);
+  box-shadow: 0 0 0 5px rgba(161, 125, 157, 0.11);
+}
+
+.validationStyle--v5 .qFieldError {
+  color: #70536f;
+}
+
+.qOption:has(input[type="radio"]:checked) {
+  border-color: rgba(91, 127, 200, 0.28);
+  background: rgba(255, 255, 255, 0.66);
+  box-shadow: 0 6px 14px rgba(72, 100, 156, 0.08);
+}
+
+.qOption:has(input[type="radio"]:checked) span {
+  color: #1b3159;
+  font-weight: 600;
 }
 
 .qConfirm {
@@ -388,12 +618,12 @@
   }
 
   .qSection {
-    padding: 24px 18px;
+    padding: 28px 20px;
     border-radius: 26px;
   }
 
   #q-concerns {
-    padding: 22px 16px;
+    padding: 26px 18px;
   }
 
   #q-concerns .qSectionTitle {
@@ -419,5 +649,14 @@
   .contactSubmit {
     width: 100%;
     font-size: var(--type-body);
+  }
+
+  .qCalmNote {
+    margin: -4px auto 8px;
+    font-size: 0.88rem;
+  }
+
+  .qRequiredLegend {
+    margin-bottom: 18px;
   }
 }

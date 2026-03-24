@@ -4,7 +4,7 @@ import PreliminaryQuestionnaireForm from "../components/PreliminaryQuestionnaire
 import { useSiteLang } from "../content/useSiteLang";
 import { useSEO } from "../seo/useSEO";
 
-export default function QuestionnairePage() {
+export default function QuestionnairePage({ validationStyleVariant }) {
   const { text, lang } = useSiteLang();
   const contact = text.contactPage;
   const pageTitle =
@@ -28,7 +28,10 @@ export default function QuestionnairePage() {
       <SiteHeader />
 
       <main className="contactMain">
-        <PreliminaryQuestionnaireForm text={text} contact={contact} />
+        <PreliminaryQuestionnaireForm
+          contact={contact}
+          validationStyleVariant={validationStyleVariant}
+        />
       </main>
     </div>
   );

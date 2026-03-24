@@ -164,18 +164,44 @@ export const siteText = {
       questionnaire: {
         title: "Preliminary Questionnaire",
         intro: "Please complete this form before your first session.",
+        supportiveStart: "Take your time. There are no right or wrong answers.",
+        requiredLegend: "Fields marked with * are required.",
+        requiredAriaLabel: "required",
         alerts: {
           secondaryAreaLimit: "Please select up to 3 additional support areas.",
         },
         messages: {
           sending: "Sending...",
           success: "Your form has been sent successfully.",
+          requiredField: "Please complete this required field.",
+          requiredConfirmation: "Please confirm this checkbox before submitting.",
           error: "Something went wrong. Please try again.",
           networkError:
             "Unable to connect to the form server. Please ensure both client and API are running.",
           serverError: "The server could not process your submission. Please try again.",
           rateLimited:
             "Too many submissions in a short time. Please wait a few minutes and try again.",
+        },
+        successPage: {
+          confirmationLabel: "Submission confirmed",
+          heading: "Your form has been submitted successfully",
+          subtext:
+            "Thank you for completing the intake form. Tracy will review your information and follow up with you as soon as possible.",
+          nextStepsTitle: "What happens next",
+          reassuranceTitle: "Support update",
+          premiumKicker: "Tracy Nguyen Counseling",
+          note:
+            "If you would like to add anything else before your first session, you can reply by email and include any updates.",
+          nextSteps: [
+            "Your intake details were received securely and are now in Tracy's review queue.",
+            "You can expect a follow-up by email or phone to discuss scheduling options.",
+            "If your availability changes, let Tracy know and the appointment plan can be adjusted.",
+          ],
+          cta: {
+            home: "Back to Home",
+            book: "Book Appointment",
+            contact: "Return to Contact",
+          },
         },
         fields: {
           primaryConcernsTitle: "Primary Concerns",
@@ -187,6 +213,7 @@ export const siteText = {
           durationLabel: "How long have you been dealing with these challenges?",
           impactLabel: "How much are these issues impacting your day-to-day?",
           healthHabitsTitle: "Health & Habits",
+          healthHabitsHint: "Please answer based on your current experience.",
           physicalHealthLabel: "Rate your physical health",
           sleepHabitsLabel: "Rate your sleep habits",
           eatingHabitsLabel: "Rate your eating habits",
@@ -195,6 +222,8 @@ export const siteText = {
           copingLabel:
             "How have you been coping with the problem(s) that brought you into therapy? What have you tried so far?",
           careHistoryTitle: "Care History",
+          careHistoryHint:
+            "This information helps us better understand your needs.",
           priorServicesLabel:
             "Have you previously received any type of mental health services?",
           selectAllHint: "Select all that apply.",
@@ -596,18 +625,44 @@ export const siteText = {
       questionnaire: {
         title: "Bảng câu hỏi sơ bộ",
         intro: "Vui lòng hoàn thành mẫu này trước buổi tư vấn đầu tiên.",
+        supportiveStart: "Bạn cứ trả lời theo nhịp của mình. Không có đúng hay sai.",
+        requiredLegend: "Các trường có dấu * là bắt buộc.",
+        requiredAriaLabel: "bắt buộc",
         alerts: {
           secondaryAreaLimit: "Vui lòng chọn tối đa 3 lĩnh vực hỗ trợ bổ sung.",
         },
         messages: {
           sending: "Đang gửi...",
           success: "Mẫu của bạn đã được gửi thành công.",
+          requiredField: "Vui lòng hoàn thành trường bắt buộc này.",
+          requiredConfirmation: "Vui lòng xác nhận ô này trước khi gửi.",
           error: "Đã xảy ra lỗi. Vui lòng thử lại.",
           networkError:
             "Không thể kết nối tới máy chủ biểu mẫu. Vui lòng đảm bảo client và API đều đang chạy.",
           serverError: "Máy chủ không thể xử lý biểu mẫu lúc này. Vui lòng thử lại.",
           rateLimited:
             "Bạn đã gửi quá nhiều lần trong thời gian ngắn. Vui lòng đợi vài phút rồi thử lại.",
+        },
+        successPage: {
+          confirmationLabel: "Đã xác nhận gửi biểu mẫu",
+          heading: "Biểu mẫu của bạn đã được gửi thành công",
+          subtext:
+            "Cảm ơn bạn đã hoàn thành mẫu thông tin ban đầu. Tracy sẽ xem thông tin của bạn và liên hệ lại sớm nhất có thể.",
+          nextStepsTitle: "Các bước tiếp theo",
+          reassuranceTitle: "Cập nhật hỗ trợ",
+          premiumKicker: "Tracy Nguyen Counseling",
+          note:
+            "Nếu bạn muốn bổ sung thêm thông tin trước buổi hẹn đầu tiên, bạn có thể phản hồi qua email để cập nhật.",
+          nextSteps: [
+            "Thông tin của bạn đã được nhận an toàn và đang chờ Tracy xem xét.",
+            "Bạn sẽ nhận phản hồi qua email hoặc điện thoại để trao đổi lịch hẹn phù hợp.",
+            "Nếu lịch rảnh của bạn thay đổi, bạn có thể báo lại để điều chỉnh kế hoạch hẹn.",
+          ],
+          cta: {
+            home: "Về trang chủ",
+            book: "Đặt lịch hẹn",
+            contact: "Quay lại liên hệ",
+          },
         },
         fields: {
           primaryConcernsTitle: "Mối quan tâm chính",
@@ -618,6 +673,7 @@ export const siteText = {
           durationLabel: "Bạn đã gặp những khó khăn này trong bao lâu?",
           impactLabel: "Những vấn đề này ảnh hưởng đến cuộc sống hằng ngày của bạn ở mức nào?",
           healthHabitsTitle: "Sức khỏe & thói quen",
+          healthHabitsHint: "Vui lòng trả lời theo trải nghiệm hiện tại của bạn.",
           physicalHealthLabel: "Đánh giá sức khỏe thể chất của bạn",
           sleepHabitsLabel: "Đánh giá thói quen ngủ của bạn",
           eatingHabitsLabel: "Đánh giá thói quen ăn uống của bạn",
@@ -626,6 +682,8 @@ export const siteText = {
           copingLabel:
             "Bạn đã đối diện với những vấn đề khiến bạn tìm đến trị liệu như thế nào? Bạn đã thử những gì?",
           careHistoryTitle: "Lịch sử hỗ trợ",
+          careHistoryHint:
+            "Thông tin này giúp chúng tôi hiểu nhu cầu của bạn rõ hơn.",
           priorServicesLabel:
             "Trước đây bạn đã từng nhận bất kỳ dịch vụ chăm sóc sức khỏe tinh thần nào chưa?",
           selectAllHint: "Chọn tất cả đáp án phù hợp.",
