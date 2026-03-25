@@ -29,7 +29,7 @@ export default function MoneyStory() {
       <div className="blogPage">
         <div className="blogWrap">
           <article className="blogWrap">
-            <h1 className="blogTitle">Why is it always about the money?</h1>
+            <h1 className="blogTitle pageH1">Why is it always about the money?</h1>
 
             <div className="blogMeta">
               <span>by Tracy Nguyen</span>

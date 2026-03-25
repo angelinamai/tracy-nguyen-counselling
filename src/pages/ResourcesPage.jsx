@@ -52,7 +52,7 @@ export default function ResourcesPage() {
       <SiteHeader />
 
       <main className="resourcesMain">
-        <h1 className="resourcesTitle">{resources.title}</h1>
+        <h1 className="resourcesTitle pageH1">{resources.title}</h1>
         <p className="resourcesLead">{resources.lead}</p>
 
         <section className="resourceSection">

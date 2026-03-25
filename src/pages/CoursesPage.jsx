@@ -25,7 +25,7 @@ export default function CoursesPage() {
 
       <main className="container coursesMain">
         <section className="card coursesCard">
-          <h1 className="coursesTitle">{courses.title}</h1>
+          <h1 className="coursesTitle pageH1">{courses.title}</h1>
           <p className="coursesLead">{courses.lead}</p>
         </section>
       </main>

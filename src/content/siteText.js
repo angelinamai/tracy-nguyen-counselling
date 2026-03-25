@@ -157,10 +157,10 @@ export const siteText = {
       introPrefix: "To book an appointment, you can email",
       introCall: "or call",
       beforeAppointment:
-        "Before your appointment, please take a moment to complete the form below.",
-      completeFormCta: "Start The Form",
+        "Before contacting Tracy, please take a moment to complete the Preliminary Form. It helps provide insight into the kind of support you are looking for.",
+      completeFormCta: "Complete Preliminary Form",
       submit: "Submit",
-      submitIntake: "Submit Intake Form",
+      submitIntake: "Submit Form",
       questionnaire: {
         title: "Preliminary Questionnaire",
         intro: "Please complete this form before your first session.",
@@ -236,7 +236,7 @@ export const siteText = {
             "What is the best availability for your therapy appointments?",
           bestPhoneLabel: "Best phone number to reach you at",
           confirmationLabel:
-            "I confirm I completed this questionnaire before booking my first appointment.",
+            "I confirm that I have completed this questionnaire before booking my first appointment.",
           answerPlaceholder: "Your answer",
           honeypotLabel: "Leave this field empty",
         },

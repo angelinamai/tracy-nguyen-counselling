@@ -31,7 +31,7 @@ export default function FAQsPage() {
 
       <main className="faqMain">
         <div className="faqCard">
-          <h1 className="faqTitle">{text.faqsPage.title}</h1>
+          <h1 className="faqTitle pageH1">{text.faqsPage.title}</h1>
           <p className="faqSubtitle">{text.faqsPage.subtitle}</p>
 
           <div className="faqList">

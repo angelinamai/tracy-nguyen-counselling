@@ -265,9 +265,12 @@ body {
 .contactTitle,
 .resourcesTitle,
 .servicesTitle,
+.aboutPageTitle,
 .faqTitle,
 .welcomeTitle,
+.coursesTitle,
 .blogTitle,
+.blogIndexTitle,
 .panelTitle,
 .blogContent h1,
 .blogContent h2,
@@ -280,14 +283,18 @@ body {
 .contactTitle,
 .resourcesTitle,
 .servicesTitle,
+.aboutPageTitle,
 .faqTitle,
 .welcomeTitle,
-.blogTitle {
+.coursesTitle,
+.blogTitle,
+.blogIndexTitle {
   font-family: var(--font-display) !important;
-  font-size: clamp(2.1rem, 3.2vw, 2.7rem) !important;
-  font-weight: 600 !important;
-  line-height: 1.1 !important;
+  font-size: clamp(32px, 3.2vw, 40px) !important;
+  font-weight: 700 !important;
+  line-height: 1.12 !important;
   letter-spacing: -0.02em !important;
+  margin: 6px 0 10px !important;
 }
 
 .subtitle,
@@ -1856,4 +1863,15 @@ html[data-nav-pill="10"] {
 .topbar .langBtn:hover {
   background: var(--nav-hover-bg) !important;
   border-color: var(--nav-hover-border) !important;
+}
+
+/* Unified page H1 style: enforce Welcome heading rhythm across pages */
+h1.pageH1 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(32px, 3.2vw, 40px) !important;
+  font-weight: 700 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.02em !important;
+  margin: 6px 0 10px !important;
+  color: var(--text) !important;
 }

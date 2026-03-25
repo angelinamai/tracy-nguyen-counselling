@@ -25,7 +25,7 @@ export default function WelcomePage() {
       <SiteHeader />
 
       <main className="welcomeContainer">
-        <h1 className="welcomeTitle">{welcome.title}</h1>
+        <h1 className="welcomeTitle pageH1">{welcome.title}</h1>
         <p className="welcomeLead">{welcome.lead}</p>
 
         <section className="welcomeHero">

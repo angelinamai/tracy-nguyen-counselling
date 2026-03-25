@@ -34,7 +34,7 @@ export default function Blog() {
       <SiteHeader />
 
       <div className="blogWrap">
-        <h1 className="blogTitle">{text.blogPage.title}</h1>
+        <h1 className="blogTitle pageH1">{text.blogPage.title}</h1>
 
         <div className="blogList">
           {selectedPosts.map((post) => {

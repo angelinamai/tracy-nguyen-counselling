@@ -27,7 +27,7 @@ function VariantFour({ content }) {
       <div className="formSuccessSplit">
         <div className="formSuccessEditorialMain">
           <span className="formSuccessBadge">{content.confirmationLabel}</span>
-          <h1 className="formSuccessHeading">{content.heading}</h1>
+          <h1 className="formSuccessHeading pageH1">{content.heading}</h1>
           <p className="formSuccessLead">{content.subtext}</p>
           <SuccessCtas cta={content.cta} />
         </div>

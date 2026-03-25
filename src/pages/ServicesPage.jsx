@@ -27,7 +27,7 @@ export default function ServicesPage() {
 
       <main className="servicesContainer">
         <section className="servicesHero">
-          <h1 className="servicesTitle">{services.title}</h1>
+          <h1 className="servicesTitle pageH1">{services.title}</h1>
           <p className="servicesIntro">{services.intro}</p>
           <p className="servicesMeta">{services.meta}</p>
 

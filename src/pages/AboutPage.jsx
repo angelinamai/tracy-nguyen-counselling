@@ -20,12 +20,12 @@ export default function AboutPage() {
   });
 
   return (
-    <div className="page">
+    <div className="aboutPage">
       <SiteHeader />
 
       <main className="container aboutMain">
-        <section className="card aboutCardFull">
-          <h1 className="aboutPageTitle">{aboutPage.title}</h1>
+        <section className="aboutCardFull">
+          <h1 className="aboutPageTitle pageH1">{aboutPage.title}</h1>
           {aboutPage.paragraphs.map((paragraph, index) => (
             <p className="aboutPageParagraph" key={index}>
               {paragraph}

@@ -1,29 +1,89 @@
+:root {
+  --about-ink: #0b1220;
+  --about-text: rgba(11, 18, 32, 0.84);
+  --about-border: rgba(11, 18, 32, 0.1);
+  --about-surface: rgba(255, 255, 255, 0.72);
+  --about-surface-strong: rgba(255, 255, 255, 0.82);
+}
+
+.aboutPage {
+  min-height: 100vh;
+  background:
+    radial-gradient(1100px 520px at 20% 0%, rgba(99, 102, 241, 0.08), transparent 60%),
+    radial-gradient(900px 460px at 85% 10%, rgba(56, 189, 248, 0.08), transparent 55%),
+    #f6f7fb;
+}
+
 .aboutMain {
-  padding: 26px 0 56px;
+  padding: 32px 0 84px;
 }
 
 .aboutCardFull {
-  max-width: 700px;
+  max-width: 1020px;
   margin: 0 auto;
-  padding: 28px 30px !important;
+  padding: 34px 40px;
+  border: 1px solid var(--about-border);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      160deg,
+      var(--about-surface-strong) 0%,
+      var(--about-surface) 72%
+    );
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.07);
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.aboutCardFull::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .aboutPageTitle {
   margin: 0 0 16px;
-  font-size: clamp(1.8rem, 2.6vw, 2.35rem);
-  line-height: 1.12;
-  color: rgba(11, 18, 32, 0.92);
-  font-weight: 700;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--about-ink);
+  font-weight: 750;
+  max-width: 18ch;
 }
 
 .aboutPageParagraph {
   margin: 0 0 20px;
-  font-size: 1rem;
-  font-weight: 450;
-  line-height: 1.82;
-  color: rgba(11, 18, 32, 0.84);
+  max-width: 76ch;
+  font-size: 1.045rem;
+  font-weight: 500;
+  line-height: 1.86;
+  color: var(--about-text);
 }
 
 .aboutPageParagraph:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .aboutMain {
+    padding: 24px 0 64px;
+  }
+
+  .aboutCardFull {
+    padding: 26px 22px;
+    border-radius: 18px;
+  }
+
+  .aboutPageTitle {
+    margin-bottom: 12px;
+    max-width: none;
+  }
+
+  .aboutPageParagraph {
+    font-size: 1.02rem;
+    line-height: 1.8;
+  }
 }
