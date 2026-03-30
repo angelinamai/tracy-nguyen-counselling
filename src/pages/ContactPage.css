@@ -83,31 +83,32 @@
   justify-content: center;
   min-width: 258px;
   padding: 13px 24px;
-  border: 1px solid #1b2a47;
+  border: 1px solid #c7d6ea;
   border-radius: 14px;
-  background: #1b2a47;
-  color: #fff;
+  background: #e9f1fb;
+  color: #1f3356;
   font-size: var(--type-body);
   line-height: 1.25;
   font-weight: var(--fw-semibold);
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 10px 22px rgba(27, 42, 71, 0.2);
+  box-shadow: none;
   transition: background 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .contactFormCta:hover {
-  background: #24365a;
-  border-color: #24365a;
+  background: #deebfa;
+  border-color: #b7cbe5;
+  color: #1c2f50;
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(27, 42, 71, 0.24);
+  box-shadow: 0 4px 10px rgba(31, 51, 86, 0.12);
 }
 
 .contactFormCta:focus-visible {
   outline: none;
   box-shadow:
-    0 0 0 4px rgba(91, 127, 200, 0.22),
-    0 10px 22px rgba(27, 42, 71, 0.2);
+    0 0 0 3px rgba(92, 128, 186, 0.24),
+    0 3px 8px rgba(31, 51, 86, 0.1);
 }
 
 .contactDetails {
