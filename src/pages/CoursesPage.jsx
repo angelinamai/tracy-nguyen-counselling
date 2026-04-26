@@ -1,8 +1,9 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import CourseCard from "../components/CourseCard";
 import { useSiteLang } from "../content/useSiteLang";
+import { useSupabaseSession } from "../hooks/useSupabaseSession";
 import { useSEO } from "../seo/useSEO";
 import {
   ADDITIONAL_COURSES,
@@ -11,15 +12,21 @@ import {
 } from "../data/courseCatalog";
 import {
   createCourseCheckoutSession,
+  getCourseAccess,
 } from "../lib/courseApiClient";
 import "./CoursesPage.css";
 
 export default function CoursesPage() {
   const { lang } = useSiteLang();
+  const { session, loading: sessionLoading, isSupabaseConfigured } = useSupabaseSession();
   const [searchParams] = useSearchParams();
   const [checkoutCourseSlug, setCheckoutCourseSlug] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [showMoreCourses, setShowMoreCourses] = useState(false);
+  const [featuredAccess, setFeaturedAccess] = useState({
+    hasAccess: false,
+    loading: true,
+  });
   
   const designParam = searchParams.get("design") || "5";
   const courseDesign = ["1", "2", "3", "4", "5"].includes(designParam)
@@ -46,6 +53,44 @@ export default function CoursesPage() {
     locale: lang === "vi" ? "vi_VN" : "en_CA",
   });
 
+  useEffect(() => {
+    if (sessionLoading) {
+      return;
+    }
+
+    if (!isSupabaseConfigured || !session?.access_token) {
+      setFeaturedAccess({ hasAccess: false, loading: false });
+      return;
+    }
+
+    let cancelled = false;
+    setFeaturedAccess((current) => ({ ...current, loading: true }));
+
+    getCourseAccess({
+      accessToken: session.access_token,
+      courseSlug: FEATURED_COURSE.slug,
+    })
+      .then((result) => {
+        if (cancelled) {
+          return;
+        }
+        setFeaturedAccess({
+          hasAccess: Boolean(result.hasAccess),
+          loading: false,
+        });
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+        setFeaturedAccess({ hasAccess: false, loading: false });
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isSupabaseConfigured, session?.access_token, sessionLoading]);
+
   const handleCourseCheckout = async (courseSlug) => {
     setErrorMessage("");
 
@@ -53,6 +98,7 @@ export default function CoursesPage() {
 
     try {
       const result = await createCourseCheckoutSession({
+        accessToken: session?.access_token,
         courseSlug,
       });
 
@@ -100,6 +146,8 @@ export default function CoursesPage() {
             featured
             designVariant={courseDesign}
             primaryAction={featuredPrimaryAction}
+            hasCourseAccess={featuredAccess.hasAccess}
+            courseAccessLoading={featuredAccess.loading}
           />
 
           {cancelledCheckout ? (

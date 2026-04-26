@@ -27,17 +27,14 @@ function renderAction(action, fallbackClassName) {
   );
 }
 
-function embedUrlToWatchUrl(url) {
-  const videoId = String(url || "").split("/embed/")[1]?.split(/[?#]/)[0];
-  return videoId ? `https://www.youtube.com/watch?v=${videoId}` : url;
-}
-
 export default function CourseCard({
   course,
   featured = false,
   primaryAction = null,
   secondaryAction = null,
   designVariant = "1",
+  hasCourseAccess = false,
+  courseAccessLoading = false,
 }) {
   const HeadingTag = featured ? "h2" : "h3";
   const bullets = Array.isArray(course.bullets)
@@ -50,7 +47,7 @@ export default function CourseCard({
   const hasPreviewImage = Boolean(course.previewThumbnail);
 
   if (featured) {
-    const showCurriculumVideos = ["1", "4"].includes(designVariant);
+    const showCurriculumVideos = hasCourseAccess && ["1", "4"].includes(designVariant);
 
     const renderPurchaseBlock = (actionLabel) => {
       const action = primaryAction
@@ -171,7 +168,7 @@ export default function CourseCard({
               {course.curriculumTitle || "Course Curriculum"}
             </h3>
             <div className="courseCurriculumList">
-              {curriculum.map((item) => (
+              {curriculum.map((item, index) => (
                 <article className="courseCurriculumCard" key={item.title}>
                   <div className="courseCurriculumCopy">
                     <h4 className="courseCurriculumTitle">{item.title}</h4>
@@ -188,15 +185,18 @@ export default function CourseCard({
                       />
                     </div>
                   ) : null}
-                  {item.videoUrl && !showCurriculumVideos ? (
-                    <a
-                      href={embedUrlToWatchUrl(item.videoUrl)}
+                  {item.videoUrl && !showCurriculumVideos && hasCourseAccess ? (
+                    <Link to="/courses/learn" className="courseVideoTextLink">
+                      Start
+                    </Link>
+                  ) : null}
+                  {item.videoUrl && !showCurriculumVideos && !hasCourseAccess ? (
+                    <Link
+                      to={`/courses/locked?lesson=${index + 1}`}
                       className="courseVideoTextLink"
-                      target="_blank"
-                      rel="noreferrer"
                     >
                       Start
-                    </a>
+                    </Link>
                   ) : null}
                 </article>
               ))}

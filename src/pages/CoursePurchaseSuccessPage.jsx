@@ -3,10 +3,12 @@ import { Link, useSearchParams } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import { useSEO } from "../seo/useSEO";
 import { FEATURED_COURSE, getCourseBySlug } from "../data/courseCatalog";
+import { useSupabaseSession } from "../hooks/useSupabaseSession";
 import { confirmCoursePurchase } from "../lib/courseApiClient";
 import "./CoursesPage.css";
 
 export default function CoursePurchaseSuccessPage() {
+  const { session, loading: sessionLoading, isSupabaseConfigured } = useSupabaseSession();
   const [searchParams] = useSearchParams();
   const sessionId = useMemo(() => searchParams.get("session_id") || "", [searchParams]);
   const requestedCourseSlug = useMemo(
@@ -35,14 +37,30 @@ export default function CoursePurchaseSuccessPage() {
       return;
     }
 
+    if (sessionLoading) {
+      return;
+    }
+
+    if (isSupabaseConfigured && !session?.access_token) {
+      setState("error");
+      setMessage("Please sign in to confirm and unlock your course access.");
+      return;
+    }
+
     let cancelled = false;
 
     confirmCoursePurchase({
+      accessToken: session?.access_token,
       courseSlug: requestedCourseSlug,
       sessionId,
     })
-      .then(() => {
+      .then((result) => {
         if (cancelled) {
+          return;
+        }
+        if (!result.granted) {
+          setState("error");
+          setMessage("Payment was confirmed, but course access could not be unlocked for this account.");
           return;
         }
         setState("success");
@@ -58,7 +76,7 @@ export default function CoursePurchaseSuccessPage() {
     return () => {
       cancelled = true;
     };
-  }, [requestedCourseSlug, sessionId]);
+  }, [isSupabaseConfigured, requestedCourseSlug, session?.access_token, sessionId, sessionLoading]);
 
   return (
     <div className="courseShell">

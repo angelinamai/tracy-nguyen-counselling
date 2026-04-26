@@ -21,7 +21,7 @@ export default function ProtectedCourseRoute({ children }) {
 
     if (!session?.access_token) {
       const next = `${location.pathname}${location.search}`;
-      navigate(`/courses/login?next=${encodeURIComponent(next)}`, { replace: true });
+      navigate(`/courses/locked?next=${encodeURIComponent(next)}`, { replace: true });
       return;
     }
 
@@ -37,7 +37,7 @@ export default function ProtectedCourseRoute({ children }) {
         }
 
         if (!result.hasAccess) {
-          navigate("/courses?access=required", { replace: true });
+          navigate("/courses/locked", { replace: true });
           return;
         }
 

@@ -10,6 +10,7 @@ import ResourcesPage from "./pages/ResourcesPage";
 import ServicesPage from "./pages/ServicesPage";
 import CoursesPage from "./pages/CoursesPage";
 import CourseDetailsPage from "./pages/CourseDetailsPage";
+import CourseLockedPage from "./pages/CourseLockedPage";
 import CourseLoginPage from "./pages/CourseLoginPage";
 import CourseLearnPage from "./pages/CourseLearnPage";
 import CoursePurchaseSuccessPage from "./pages/CoursePurchaseSuccessPage";
@@ -68,6 +69,7 @@ export default function App() {
       <Route path="/resources" element={<ResourcesPage />} />
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/courses" element={<CoursesPage />} />
+      <Route path="/courses/locked" element={<CourseLockedPage />} />
       <Route path="/courses/login" element={<CourseLoginPage />} />
       <Route path="/courses/success" element={<CoursePurchaseSuccessPage />} />
       <Route path="/courses/:slug" element={<CourseDetailsPage />} />
