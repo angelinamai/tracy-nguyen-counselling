@@ -8,13 +8,45 @@ import BlogImage from "../components/BlogImage";
 import { useSiteLang } from "../content/useSiteLang";
 import { useSEO } from "../seo/useSEO";
 import { SEO_SITE_NAME } from "../seo/constants";
-import girlTherapySessionImage from "../assets/blog/girl-therapy-session.jpg";
+import generatedBeingAsianImage from "../assets/blog/generated-being-asian.jpg";
+import generatedGirlFamilyImage from "../assets/blog/generated-girl-family.jpg";
+import generatedMoneyFamilyImage from "../assets/blog/generated-money-family.jpg";
+import generatedMovingCountryImage from "../assets/blog/generated-moving-country.jpg";
+import generatedPreventionImage from "../assets/blog/generated-prevention.jpg";
+import generatedStudentsImage from "../assets/blog/generated-students.jpg";
 
-const EMPOWERED_IMAGE_POST_SLUG = "how-is-it-like-being-a-girl";
-const EMPOWERED_IMAGE_ALT =
-  "A confident woman speaking during a therapy session";
-const EMPOWERED_IMAGE_CAPTION =
-  "Finding your voice is not loud. It's clear, grounded, and unapologetic.";
+const BLOG_STORY_IMAGES = {
+  "being-asian": {
+    src: generatedBeingAsianImage,
+    alt: "A reflective Asian adult sitting near a softly lit window",
+    caption: "Identity can hold love, history, belonging, and complexity at the same time.",
+  },
+  "how-is-it-like-being-a-girl": {
+    src: generatedGirlFamilyImage,
+    alt: "A grounded young woman speaking in a calm counseling space",
+    caption: "Finding your voice is not loud. It's clear, grounded, and unapologetic.",
+  },
+  "its-all-about-prevention": {
+    src: generatedPreventionImage,
+    alt: "A calm journaling scene with tea and soft morning light",
+    caption: "Prevention begins with noticing stress before it becomes too heavy to carry.",
+  },
+  "struggles-moving-country": {
+    src: generatedMovingCountryImage,
+    alt: "A person sitting beside an unpacked suitcase in a new apartment",
+    caption: "Starting over can be hopeful and overwhelming at the same time.",
+  },
+  "unspoken-burdens-students": {
+    src: generatedStudentsImage,
+    alt: "An international student studying quietly at a desk in the evening",
+    caption: "Some burdens are carried quietly, even when everything looks fine from outside.",
+  },
+  "why-is-it-always-about-the-money": {
+    src: generatedMoneyFamilyImage,
+    alt: "A young adult sitting thoughtfully at a family dining table",
+    caption: "Money conversations often carry deeper stories about safety, sacrifice, and love.",
+  },
+};
 
 function splitAtFirstParagraph(markdown = "") {
   const normalized = markdown.trim();
@@ -37,11 +69,11 @@ export default function BlogPost() {
   const { text, lang } = useSiteLang();
   const post = posts.find((p) => p.slug === slug);
   const localized = post ? post[lang] || post.en : null;
-  const showEmpoweredImage = slug === EMPOWERED_IMAGE_POST_SLUG;
+  const storyImage = BLOG_STORY_IMAGES[slug];
   let introBody = localized?.body || "";
   let remainingBody = "";
 
-  if (showEmpoweredImage && localized?.body) {
+  if (storyImage && localized?.body) {
     const { intro, rest } = splitAtFirstParagraph(localized.body);
     introBody = intro || localized.body;
     remainingBody = rest;
@@ -85,11 +117,11 @@ export default function BlogPost() {
         <div className="blogContent">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{introBody}</ReactMarkdown>
 
-          {showEmpoweredImage ? (
+          {storyImage ? (
             <BlogImage
-              src={girlTherapySessionImage}
-              alt={EMPOWERED_IMAGE_ALT}
-              caption={EMPOWERED_IMAGE_CAPTION}
+              src={storyImage.src}
+              alt={storyImage.alt}
+              caption={storyImage.caption}
             />
           ) : null}
 
