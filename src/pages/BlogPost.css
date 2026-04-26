@@ -67,3 +67,39 @@
     padding: 16px;
     border-radius: 8px;
 }
+
+.blogInlineImageFigure {
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto 36px;
+}
+
+.blogInlineImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 22px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.blogInlineImageCaption {
+    margin: 10px 2px 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #64748b;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .blogInlineImageFigure {
+        margin: 24px auto 30px;
+    }
+
+    .blogInlineImage {
+        border-radius: 20px;
+    }
+
+    .blogInlineImageCaption {
+        font-size: 13px;
+    }
+}

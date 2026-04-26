@@ -9,10 +9,15 @@ import AboutPage from "./pages/AboutPage";
 import ResourcesPage from "./pages/ResourcesPage";
 import ServicesPage from "./pages/ServicesPage";
 import CoursesPage from "./pages/CoursesPage";
+import CourseDetailsPage from "./pages/CourseDetailsPage";
+import CourseLoginPage from "./pages/CourseLoginPage";
+import CourseLearnPage from "./pages/CourseLearnPage";
+import CoursePurchaseSuccessPage from "./pages/CoursePurchaseSuccessPage";
 import Blog from "./pages/Blog";
 import MoneyStory from "./pages/MoneyStory";
 import BlogPost from "./pages/BlogPost";
 import FormSuccessPage from "./pages/FormSuccessPage";
+import ProtectedCourseRoute from "./components/ProtectedCourseRoute";
 import { useSiteLang } from "./content/useSiteLang";
 export default function App() {
   const { text } = useSiteLang();
@@ -63,6 +68,17 @@ export default function App() {
       <Route path="/resources" element={<ResourcesPage />} />
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/courses" element={<CoursesPage />} />
+      <Route path="/courses/login" element={<CourseLoginPage />} />
+      <Route path="/courses/success" element={<CoursePurchaseSuccessPage />} />
+      <Route path="/courses/:slug" element={<CourseDetailsPage />} />
+      <Route
+        path="/courses/learn"
+        element={(
+          <ProtectedCourseRoute>
+            <CourseLearnPage />
+          </ProtectedCourseRoute>
+        )}
+      />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/money" element={<MoneyStory />} />
       <Route path="/blog/:slug" element={<BlogPost />} />

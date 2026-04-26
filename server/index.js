@@ -1,5 +1,10 @@
 import express from "express";
 import { getHealthStatus, handleContactIntake } from "./contactApi.js";
+import {
+  handleConfirmCoursePurchase,
+  handleCreateCourseCheckout,
+  handleGetCourseAccess,
+} from "./courseApi.js";
 
 const app = express();
 const port = Number(process.env.API_PORT || 8787);
@@ -11,6 +16,33 @@ app.post("/api/contact-intake", async (req, res) => {
     body: req.body,
     headers: req.headers,
     ip: req.ip || req.socket?.remoteAddress || "unknown",
+  });
+
+  return res.status(result.status).json(result.body);
+});
+
+app.post("/api/course/checkout", async (req, res) => {
+  const result = await handleCreateCourseCheckout({
+    headers: req.headers,
+    body: req.body,
+  });
+
+  return res.status(result.status).json(result.body);
+});
+
+app.post("/api/course/confirm", async (req, res) => {
+  const result = await handleConfirmCoursePurchase({
+    headers: req.headers,
+    body: req.body,
+  });
+
+  return res.status(result.status).json(result.body);
+});
+
+app.get("/api/course/access", async (req, res) => {
+  const result = await handleGetCourseAccess({
+    headers: req.headers,
+    query: req.query,
   });
 
   return res.status(result.status).json(result.body);

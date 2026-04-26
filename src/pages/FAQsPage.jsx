@@ -8,6 +8,7 @@ export default function FAQsPage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const { text, lang } = useSiteLang();
   const faqs = text.faqsPage.items;
+  const currentYear = new Date().getFullYear();
   const pageTitle = lang === "vi" ? "Hỏi đáp | Tracy Nguyen Counseling" : "FAQs | Tracy Nguyen Counseling";
   const pageDescription =
     lang === "vi"
@@ -37,7 +38,9 @@ export default function FAQsPage() {
           <div className="faqList">
             {faqs.map((faq, index) => {
               const open = activeIndex === index;
-              const normalizedAnswer = faq.answer.replace(/\\n/g, "\n");
+              const normalizedAnswer = faq.answer
+                .replace("__CURRENT_YEAR__", String(currentYear))
+                .replace(/\\n/g, "\n");
 
               return (
                 <div key={index} className={`faqItem ${open ? "open" : ""}`}>

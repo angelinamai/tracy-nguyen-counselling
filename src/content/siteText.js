@@ -308,7 +308,7 @@ export const siteText = {
         {
           question: "Are you still accepting new clients?",
           answer:
-            "Yes. As of January 2025, I am accepting new clients.\nVirtual appointments: approximately 1-2 weeks wait time.\nIn-person appointments may require a longer wait.",
+            "Yes. As of January __CURRENT_YEAR__, I am accepting new clients.\nVirtual appointments: approximately 1-2 weeks wait time.\nIn-person appointments may require a longer wait.",
         },
         {
           question: "What are the steps to book an appointment?",
@@ -767,7 +767,7 @@ export const siteText = {
         {
           question: "Hiện bạn còn nhận khách mới không?",
           answer:
-            "Có. Tính đến tháng 1 năm 2025, tôi vẫn nhận khách mới.\nLịch trực tuyến: thời gian chờ khoảng 1-2 tuần.\nLịch trực tiếp có thể cần chờ lâu hơn.",
+            "Có. Tính đến tháng 1 năm __CURRENT_YEAR__, tôi vẫn nhận khách mới.\nLịch trực tuyến: thời gian chờ khoảng 1-2 tuần.\nLịch trực tiếp có thể cần chờ lâu hơn.",
         },
         {
           question: "Các bước để đặt lịch hẹn là gì?",

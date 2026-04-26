@@ -78,6 +78,37 @@ function formatEmailValue(key, value) {
   return normalized;
 }
 
+function isValidEmail(value) {
+  if (typeof value !== "string") {
+    return false;
+  }
+  const normalized = value.trim();
+  if (!normalized) {
+    return false;
+  }
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalized);
+}
+
+function getReplyToEmail(fields) {
+  const replyToKeys = [
+    "email",
+    "client_email",
+    "contact_email",
+    "email_address",
+    "best_email",
+    "your_email",
+  ];
+
+  for (const key of replyToKeys) {
+    const candidate = normalizeValue(fields?.[key]);
+    if (isValidEmail(candidate)) {
+      return candidate;
+    }
+  }
+
+  return null;
+}
+
 function isRateLimited(ip, config) {
   const now = Date.now();
   const recent = (requestLog.get(ip) || []).filter(
@@ -102,11 +133,8 @@ export function getApiConfig() {
   }
 
   const resendApiKey = process.env.RESEND_API_KEY;
-  const resendFromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
-  const isDevelopment = process.env.NODE_ENV !== "production";
-  const contactToEmail =
-    process.env.CONTACT_TO_EMAIL ||
-    (isDevelopment ? "angelinaxu9@gmail.com" : "tracyincounseling@gmail.com");
+  const resendFromEmail = normalizeValue(process.env.RESEND_FROM_EMAIL);
+  const contactToEmail = normalizeValue(process.env.CONTACT_TO_EMAIL);
   const rateLimitWindowMs = Number(process.env.RATE_LIMIT_WINDOW_MS || 600000);
   const rateLimitMax = Number(process.env.RATE_LIMIT_MAX || 5);
   const resend = resendApiKey ? new Resend(resendApiKey) : null;
@@ -203,6 +231,26 @@ export async function handleContactIntake({ body, headers, ip }) {
     };
   }
 
+  if (!config.resendFromEmail) {
+    return {
+      status: 500,
+      body: {
+        error:
+          "Email service is not configured on the server. Missing environment variable: RESEND_FROM_EMAIL",
+      },
+    };
+  }
+
+  if (!config.contactToEmail) {
+    return {
+      status: 500,
+      body: {
+        error:
+          "Email service is not configured on the server. Missing environment variable: CONTACT_TO_EMAIL",
+      },
+    };
+  }
+
   const fieldEntries = Object.entries(fields).filter(
     ([key, value]) => key !== "website" && formatEmailValue(key, value).length,
   );
@@ -233,13 +281,23 @@ export async function handleContactIntake({ body, headers, ip }) {
     .join("");
 
   try {
-    const sendResult = await config.resend.emails.send({
-      from: config.resendFromEmail,
+    const replyToEmail = getReplyToEmail(fields);
+    const sendPayload = {
+      from: `Tracy Nguyen <${config.resendFromEmail}>`,
       to: [config.contactToEmail],
       subject: "New Client Intake Submission",
       text: textBody,
       html: `<h2 style="margin:0 0 12px;color:#0f172a;">New Client Intake Submission</h2><table style="border-collapse:collapse;width:100%;max-width:860px;background:#ffffff;">${htmlRows}</table>`,
+      ...(replyToEmail ? { replyTo: replyToEmail } : {}),
+    };
+
+    console.info("[contact-intake] sending email", {
+      to: config.contactToEmail,
+      replyTo: replyToEmail || null,
+      from: `Tracy Nguyen <${config.resendFromEmail}>`,
     });
+
+    const sendResult = await config.resend.emails.send(sendPayload);
 
     if (sendResult?.error) {
       const reason =
