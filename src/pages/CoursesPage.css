@@ -510,7 +510,7 @@
 .courseFeatureDesign5 .courseFeatureTitle {
   max-width: 760px;
   margin: 0 auto 16px;
-  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  font-size: clamp(1.95rem, 4.35vw, 3.7rem);
   line-height: 1.05;
 }
 
@@ -1377,22 +1377,28 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(104, 129, 180, 0.42);
+  border: 1px solid rgba(58, 108, 255, 0.32);
   border-radius: 999px;
-  background: #7eb6b8;
-  color: #ffffff !important;
+  background: linear-gradient(135deg,
+      rgba(58, 108, 255, 0.12),
+      rgba(24, 184, 255, 0.08) 52%,
+      rgba(255, 255, 255, 0.92));
+  color: #1a2542 !important;
   padding: 14px 34px;
-  font-size: 1rem;
-  font-weight: 750;
+  font-size: 14px;
+  font-weight: 700;
   text-decoration: none !important;
-  box-shadow: 0 12px 24px rgba(21, 41, 76, 0.16);
-  transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 8px 16px rgba(58, 108, 255, 0.16);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 
 .courseLockedUnlockBtn:hover {
-  background: #6da8ab;
-  transform: translateY(-1px);
-  box-shadow: 0 14px 28px rgba(21, 41, 76, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(58, 108, 255, 0.22);
+  background: linear-gradient(135deg,
+      rgba(58, 108, 255, 0.2),
+      rgba(24, 184, 255, 0.14) 52%,
+      rgba(255, 255, 255, 0.97));
 }
 
 .courseLessonList {
@@ -1425,7 +1431,12 @@
 }
 
 @media (max-width: 720px) {
+  .courseShell {
+    overflow-x: hidden;
+  }
+
   .courseMain {
+    width: min(100% - 28px, 980px);
     padding-top: 24px;
   }
 
@@ -1444,6 +1455,7 @@
   .courseFeatureDesign4 .courseCurriculumList,
   .courseFeatureDesign5 {
     grid-template-columns: 1fr;
+    border-radius: 22px;
   }
 
   .courseFeatureDesign2 .courseCurriculumCard {
@@ -1485,10 +1497,39 @@
 
   .courseFeatureDesign5 .courseCurriculumCard {
     grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px 18px;
   }
 
   .courseFeatureDesign5 .courseVideoTextLink {
     width: 100%;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .courseFeatureDesign5 .courseDesignedTitle {
+    font-size: clamp(1.65rem, 8vw, 2.15rem);
+    line-height: 1.15;
+  }
+
+  .courseFeatureDesign5 .courseCurriculumTitle {
+    font-size: clamp(1.1rem, 5.6vw, 1.35rem);
+    line-height: 1.28;
+  }
+
+  .courseFeatureDesign5 .courseCurriculumDescription {
+    padding-left: 0;
+    font-size: clamp(1rem, 4.8vw, 1.1rem);
+    line-height: 1.5;
+  }
+
+  .courseFeatureDesign5 .courseCurriculumTitle::before {
+    margin-right: 8px;
   }
 
   .courseFeaturePurchase {
@@ -1508,6 +1549,22 @@
   .courseInlineCta .courseFeatureActions .coursePrimaryBtn,
   .courseInlineCta .courseFeatureActions .courseSecondaryBtn {
     width: 100%;
+  }
+
+  .courseFeatureDesign5 .courseInlineCtaBottom {
+    padding-bottom: 18px;
+  }
+
+  .courseFeatureDesign5 .courseTrustLine {
+    padding: 0 18px 22px;
+    margin-top: 12px;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .courseSection > .courseFootnote {
+    padding: 0 4px;
+    overflow-wrap: anywhere;
   }
 
   .courseCurriculumCard {

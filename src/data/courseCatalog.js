@@ -18,7 +18,7 @@ export const COURSE_LIBRARY = [
     shortDescription:
       "This course offers a safe, compassionate space to explore your relationship with your immigrant parents—without guilt or pressure to choose sides.",
     price: COURSE_PRICE_LABEL,
-    duration: "10 mins video",
+    duration: "5 short videos • 1–2 mins each",
     format: "Self-paced",
     access: "Lifetime access",
     bullets: [
